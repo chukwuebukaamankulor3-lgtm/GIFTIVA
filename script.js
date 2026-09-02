@@ -1,244 +1,515 @@
-/* =========================================================
-   GIFTIVA — Main JavaScript
-   Send Love. Anywhere. 🌍🎁
-   ========================================================= */
-
-
-/* ---------------------------------------------------------
-   GLOBAL CART
-   --------------------------------------------------------- */
+/* =========================================
+   GIFTIVA — MAIN JAVASCRIPT
+   Worldwide Country → Region → City
+   ========================================= */
 
 let cart = [];
 
+/* =========================================
+   GIFTIVA COUNTRIES
+   ========================================= */
 
-/* ---------------------------------------------------------
-   LOCATION DATA
-   --------------------------------------------------------- */
+const giftivaCountries = [
+  "Nigeria",
+  "United Kingdom",
+  "United States",
+  "Canada",
+  "Australia",
+  "Italy",
+  "France",
+  "Germany",
+  "Spain",
+  "Portugal",
+  "Netherlands",
+  "Belgium",
+  "Switzerland",
+  "Austria",
+  "Ireland",
+  "Norway",
+  "Sweden",
+  "Denmark",
+  "Finland",
+  "Poland",
+  "Greece",
+  "United Arab Emirates",
+  "Saudi Arabia",
+  "Qatar",
+  "South Africa",
+  "Ghana",
+  "Kenya",
+  "Brazil",
+  "Mexico",
+  "Japan",
+  "China",
+  "India",
+  "Singapore",
+  "Malaysia",
+  "New Zealand"
+];
 
-const locations = {
-  Nigeria: {
-    "Abia": ["Aba", "Umuahia", "Ohafia"],
-    "Adamawa": ["Yola", "Mubi", "Jimeta"],
-    "Akwa Ibom": ["Uyo", "Eket", "Ikot Ekpene"],
-    "Anambra": ["Awka", "Onitsha", "Nnewi"],
-    "Bauchi": ["Bauchi", "Azare", "Jama'are"],
-    "Bayelsa": ["Yenagoa", "Brass", "Kaiama"],
-    "Benue": ["Makurdi", "Gboko", "Otukpo"],
-    "Borno": ["Maiduguri", "Biu", "Dikwa"],
-    "Cross River": ["Calabar", "Ikom", "Ogoja"],
-    "Delta": ["Asaba", "Warri", "Sapele"],
-    "Ebonyi": ["Abakaliki", "Afikpo", "Onueke"],
-    "Edo": ["Benin City", "Auchi", "Ekpoma"],
-    "Ekiti": ["Ado-Ekiti", "Ikere", "Ijero"],
-    "Enugu": ["Enugu", "Nsukka", "Oji River"],
-    "FCT": ["Abuja", "Gwagwalada", "Kuje"],
-    "Gombe": ["Gombe", "Kumo", "Deba"],
-    "Imo": ["Owerri", "Orlu", "Okigwe"],
-    "Jigawa": ["Dutse", "Hadejia", "Gumel"],
-    "Kaduna": ["Kaduna", "Zaria", "Kafanchan"],
-    "Kano": ["Kano", "Wudil", "Gwarzo"],
-    "Katsina": ["Katsina", "Daura", "Funtua"],
-    "Kebbi": ["Birnin Kebbi", "Argungu", "Yauri"],
-    "Kogi": ["Lokoja", "Okene", "Idah"],
-    "Kwara": ["Ilorin", "Offa", "Jebba"],
-    "Lagos": ["Lagos Island", "Ikeja", "Lekki", "Victoria Island"],
-    "Nasarawa": ["Lafia", "Keffi", "Karu"],
-    "Niger": ["Minna", "Suleja", "Bida"],
-    "Ogun": ["Abeokuta", "Sagamu", "Ijebu-Ode"],
-    "Ondo": ["Akure", "Ondo", "Owo"],
-    "Osun": ["Osogbo", "Ile-Ife", "Ilesa"],
-    "Oyo": ["Ibadan", "Ogbomoso", "Oyo"],
-    "Plateau": ["Jos", "Bukuru", "Pankshin"],
-    "Rivers": ["Port Harcourt", "Bonny", "Obio-Akpor"],
-    "Sokoto": ["Sokoto", "Tambuwal", "Wurno"],
-    "Taraba": ["Jalingo", "Wukari", "Gembu"],
-    "Yobe": ["Damaturu", "Potiskum", "Nguru"],
-    "Zamfara": ["Gusau", "Kaura Namoda", "Talata Mafara"]
-  },
+/* =========================================
+   LOCATION API
+   ========================================= */
 
-  "United Kingdom": {
-    "England": ["London", "Manchester", "Birmingham", "Liverpool"],
-    "Scotland": ["Edinburgh", "Glasgow", "Aberdeen"],
-    "Wales": ["Cardiff", "Swansea", "Newport"],
-    "Northern Ireland": ["Belfast", "Derry", "Lisburn"]
-  },
+const LOCATION_API =
+  "https://countriesnow.space/api/v0.1";
 
-  "United States": {
-    "California": ["Los Angeles", "San Francisco", "San Diego"],
-    "New York": ["New York City", "Buffalo", "Rochester"],
-    "Texas": ["Houston", "Dallas", "Austin"],
-    "Florida": ["Miami", "Orlando", "Tampa"]
-  },
+/* =========================================
+   GET LOCATION ELEMENTS
+   ========================================= */
 
-  Canada: {
-    "Ontario": ["Toronto", "Ottawa", "Hamilton"],
-    "Quebec": ["Montreal", "Quebec City", "Laval"],
-    "British Columbia": ["Vancouver", "Victoria", "Surrey"],
-    "Alberta": ["Calgary", "Edmonton", "Red Deer"]
-  },
+function getLocationElements() {
 
-  France: {
-    "Île-de-France": ["Paris", "Versailles", "Boulogne-Billancourt"],
-    "Provence-Alpes-Côte d'Azur": ["Marseille", "Nice", "Cannes"],
-    "Auvergne-Rhône-Alpes": ["Lyon", "Grenoble", "Annecy"]
-  },
+  return {
+    country: document.getElementById("country"),
+    region: document.getElementById("region"),
+    city: document.getElementById("city")
+  };
+}
 
-  Germany: {
-    Bavaria: ["Munich", "Nuremberg", "Augsburg"],
-    Berlin: ["Berlin"],
-    Hesse: ["Frankfurt", "Wiesbaden", "Darmstadt"]
-  },
+/* =========================================
+   LOADING MESSAGE
+   ========================================= */
 
-  Italy: {
-    Lazio: ["Rome", "Fiumicino", "Viterbo"],
-    Lombardy: ["Milan", "Bergamo", "Brescia"],
-    Campania: ["Naples", "Salerno", "Caserta"]
-  },
+function setSelectMessage(select, message) {
 
-  Spain: {
-    Madrid: ["Madrid", "Alcalá de Henares"],
-    Catalonia: ["Barcelona", "Girona", "Tarragona"],
-    Andalusia: ["Seville", "Malaga", "Granada"]
-  },
+  if (!select) return;
 
-  Netherlands: {
-    "North Holland": ["Amsterdam", "Haarlem", "Zaandam"],
-    "South Holland": ["Rotterdam", "The Hague", "Leiden"],
-    Utrecht: ["Utrecht", "Amersfoort"]
-  },
+  select.innerHTML = "";
 
-  Ireland: {
-    Leinster: ["Dublin", "Drogheda", "Kilkenny"],
-    Munster: ["Cork", "Limerick", "Waterford"],
-    Connacht: ["Galway", "Sligo"]
-  },
+  const option =
+    document.createElement("option");
 
-  Australia: {
-    "New South Wales": ["Sydney", "Newcastle", "Wollongong"],
-    Victoria: ["Melbourne", "Geelong", "Ballarat"],
-    Queensland: ["Brisbane", "Gold Coast", "Cairns"],
-    "Western Australia": ["Perth", "Fremantle", "Bunbury"]
-  },
+  option.value = "";
+  option.textContent = message;
 
-  "New Zealand": {
-    Auckland: ["Auckland"],
-    Wellington: ["Wellington"],
-    Canterbury: ["Christchurch", "Timaru"]
-  },
+  select.appendChild(option);
+}
 
-  "South Africa": {
-    Gauteng: ["Johannesburg", "Pretoria", "Sandton"],
-    "Western Cape": ["Cape Town", "Stellenbosch", "Paarl"],
-    "KwaZulu-Natal": ["Durban", "Pietermaritzburg"]
-  },
+/* =========================================
+   POPULATE COUNTRY DROPDOWN
+   ========================================= */
 
-  Ghana: {
-    "Greater Accra": ["Accra", "Tema", "Madina"],
-    Ashanti: ["Kumasi", "Obuasi", "Ejisu"],
-    Western: ["Takoradi", "Tarkwa"]
-  },
+function populateCountries() {
 
-  Kenya: {
-    "Nairobi County": ["Nairobi"],
-    "Mombasa County": ["Mombasa"],
-    "Kiambu County": ["Thika", "Ruiru", "Kiambu"]
-  },
+  const {
+    country,
+    region,
+    city
+  } = getLocationElements();
 
-  "United Arab Emirates": {
-    Dubai: ["Dubai"],
-    "Abu Dhabi": ["Abu Dhabi"],
-    Sharjah: ["Sharjah"]
+  if (!country || !region || !city) {
+    console.error(
+      "GIFTIVA: Location dropdowns missing."
+    );
+    return;
   }
-};
 
+  country.innerHTML =
+    '<option value="">Select country</option>';
 
-/* ---------------------------------------------------------
-   COUNTRY → REGION
-   --------------------------------------------------------- */
+  giftivaCountries.forEach(function(countryName) {
 
-function updateRegions() {
+    const option =
+      document.createElement("option");
 
-  const country = document.getElementById("country");
-  const region = document.getElementById("region");
-  const city = document.getElementById("city");
+    option.value = countryName;
+    option.textContent = countryName;
 
-  if (!country || !region || !city) return;
-
-  region.innerHTML =
-    '<option value="">Select State / Region</option>';
-
-  city.innerHTML =
-    '<option value="">Select City</option>';
-
-  const countryData = locations[country.value];
-
-  if (!countryData) return;
-
-  Object.keys(countryData).forEach(function(regionName) {
-
-    const option = document.createElement("option");
-
-    option.value = regionName;
-    option.textContent = regionName;
-
-    region.appendChild(option);
-
+    country.appendChild(option);
   });
+
+  setSelectMessage(
+    region,
+    "Select state / region"
+  );
+
+  setSelectMessage(
+    city,
+    "Select city"
+  );
+
+  region.disabled = true;
+  city.disabled = true;
 }
 
+/* =========================================
+   LOAD REGIONS / STATES
+   ========================================= */
 
-/* ---------------------------------------------------------
-   REGION → CITY
-   --------------------------------------------------------- */
+async function updateRegions() {
 
-function updateCities() {
+  const {
+    country,
+    region,
+    city
+  } = getLocationElements();
 
-  const country = document.getElementById("country");
-  const region = document.getElementById("region");
-  const city = document.getElementById("city");
+  if (!country || !region || !city) {
+    return;
+  }
 
-  if (!country || !region || !city) return;
+  const selectedCountry =
+    country.value;
 
-  city.innerHTML =
-    '<option value="">Select City</option>';
+  setSelectMessage(
+    region,
+    "Loading states / regions..."
+  );
 
-  const countryData = locations[country.value];
+  setSelectMessage(
+    city,
+    "Select city"
+  );
 
-  if (!countryData) return;
+  region.disabled = true;
+  city.disabled = true;
 
-  const cities = countryData[region.value];
+  if (!selectedCountry) {
 
-  if (!cities) return;
+    setSelectMessage(
+      region,
+      "Select state / region"
+    );
 
-  cities.forEach(function(cityName) {
+    return;
+  }
 
-    const option = document.createElement("option");
+  try {
 
-    option.value = cityName;
-    option.textContent = cityName;
+    const response = await fetch(
+      `${LOCATION_API}/countries/states/q?country=${encodeURIComponent(selectedCountry)}`
+    );
 
-    city.appendChild(option);
+    if (!response.ok) {
+      throw new Error(
+        `HTTP ${response.status}`
+      );
+    }
 
-  });
+    const result =
+      await response.json();
+
+    if (
+      result.error ||
+      !result.data ||
+      !result.data.states
+    ) {
+      throw new Error(
+        "No region data returned."
+      );
+    }
+
+    const states =
+      result.data.states;
+
+    setSelectMessage(
+      region,
+      "Select state / region"
+    );
+
+    states.forEach(function(state) {
+
+      const option =
+        document.createElement("option");
+
+      option.value =
+        state.name;
+
+      option.textContent =
+        state.name;
+
+      region.appendChild(option);
+    });
+
+    region.disabled = false;
+
+  } catch (error) {
+
+    console.error(
+      "GIFTIVA region error:",
+      error
+    );
+
+    setSelectMessage(
+      region,
+      "Could not load regions"
+    );
+
+    alert(
+      "We couldn't load the states/regions right now. Please check your internet connection and try again."
+    );
+  }
 }
 
+/* =========================================
+   LOAD CITIES
+   ========================================= */
 
-/* ---------------------------------------------------------
-   CURRENCY FORMATTER
-   --------------------------------------------------------- */
+async function updateCities() {
+
+  const {
+    country,
+    region,
+    city
+  } = getLocationElements();
+
+  if (!country || !region || !city) {
+    return;
+  }
+
+  const selectedCountry =
+    country.value;
+
+  const selectedRegion =
+    region.value;
+
+  setSelectMessage(
+    city,
+    "Loading cities..."
+  );
+
+  city.disabled = true;
+
+  if (
+    !selectedCountry ||
+    !selectedRegion
+  ) {
+
+    setSelectMessage(
+      city,
+      "Select city"
+    );
+
+    return;
+  }
+
+  try {
+
+    const response = await fetch(
+      `${LOCATION_API}/countries/state/cities`,
+      {
+        method: "POST",
+
+        headers: {
+          "Content-Type":
+            "application/json"
+        },
+
+        body: JSON.stringify({
+          country:
+            selectedCountry,
+
+          state:
+            selectedRegion
+        })
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error(
+        `HTTP ${response.status}`
+      );
+    }
+
+    const result =
+      await response.json();
+
+    if (
+      result.error ||
+      !result.data ||
+      !result.data.states
+    ) {
+
+      /*
+       * Some countries/regions can have
+       * inconsistent administrative data.
+       * Try the city endpoint as a fallback.
+       */
+
+      await loadCitiesFallback(
+        selectedCountry,
+        selectedRegion
+      );
+
+      return;
+    }
+
+    const cities =
+      result.data.states;
+
+    setSelectMessage(
+      city,
+      "Select city"
+    );
+
+    cities.forEach(function(cityName) {
+
+      const option =
+        document.createElement("option");
+
+      option.value =
+        cityName;
+
+      option.textContent =
+        cityName;
+
+      city.appendChild(option);
+    });
+
+    if (cities.length > 0) {
+      city.disabled = false;
+    } else {
+
+      setSelectMessage(
+        city,
+        "No cities found"
+      );
+    }
+
+  } catch (error) {
+
+    console.error(
+      "GIFTIVA city error:",
+      error
+    );
+
+    await loadCitiesFallback(
+      selectedCountry,
+      selectedRegion
+    );
+  }
+}
+
+/* =========================================
+   CITY FALLBACK
+   ========================================= */
+
+async function loadCitiesFallback(
+  country,
+  region
+) {
+
+  const {
+    city
+  } = getLocationElements();
+
+  if (!city) {
+    return;
+  }
+
+  try {
+
+    const response =
+      await fetch(
+        `${LOCATION_API}/countries/cities`,
+        {
+          method: "POST",
+
+          headers: {
+            "Content-Type":
+              "application/json"
+          },
+
+          body: JSON.stringify({
+            country: country
+          })
+        }
+      );
+
+    if (!response.ok) {
+      throw new Error(
+        `HTTP ${response.status}`
+      );
+    }
+
+    const result =
+      await response.json();
+
+    if (
+      result.error ||
+      !result.data
+    ) {
+      throw new Error(
+        "Could not load cities."
+      );
+    }
+
+    /*
+     * If the API returns country-wide
+     * cities, use them as a fallback.
+     */
+
+    const cities =
+      Array.isArray(result.data)
+        ? result.data
+        : [];
+
+    setSelectMessage(
+      city,
+      "Select city"
+    );
+
+    cities.forEach(function(cityName) {
+
+      const option =
+        document.createElement("option");
+
+      option.value =
+        cityName;
+
+      option.textContent =
+        cityName;
+
+      city.appendChild(option);
+    });
+
+    if (cities.length > 0) {
+
+      city.disabled = false;
+
+    } else {
+
+      setSelectMessage(
+        city,
+        "No cities found"
+      );
+    }
+
+  } catch (error) {
+
+    console.error(
+      "GIFTIVA city fallback error:",
+      error
+    );
+
+    setSelectMessage(
+      city,
+      "Could not load cities"
+    );
+  }
+}
+
+/* =========================================
+   PRICE FORMAT
+   ========================================= */
 
 function formatPrice(price, currency) {
 
-  const currencyMap = {
+  const symbols = {
+
     NGN: "₦",
     GBP: "£",
     USD: "$",
-    CAD: "$",
-    EUR: "€",
-    AUD: "$"
+    CAD: "CA$",
+    AUD: "A$",
+    EUR: "€"
+
   };
 
-  const symbol = currencyMap[currency] || currency;
+  const symbol =
+    symbols[currency] ||
+    currency + " ";
 
   return (
     symbol +
@@ -246,637 +517,716 @@ function formatPrice(price, currency) {
   );
 }
 
-
-/* ---------------------------------------------------------
+/* =========================================
    MARKETPLACE SEARCH
-   --------------------------------------------------------- */
+   ========================================= */
 
 function findItems() {
 
-  const countryElement =
-    document.getElementById("country");
-
-  const regionElement =
-    document.getElementById("region");
-
-  const cityElement =
-    document.getElementById("city");
-
-  const categoryElement =
-    document.getElementById("category");
-
   const country =
-    countryElement ? countryElement.value : "";
+    document.getElementById(
+      "country"
+    )?.value;
 
   const region =
-    regionElement ? regionElement.value : "";
+    document.getElementById(
+      "region"
+    )?.value;
 
   const city =
-    cityElement ? cityElement.value : "";
+    document.getElementById(
+      "city"
+    )?.value;
 
   const category =
-    categoryElement ? categoryElement.value : "";
-
+    document.getElementById(
+      "category"
+    )?.value;
 
   if (!country) {
 
     alert(
-      "Please select a destination country."
+      "Please select a country first."
     );
 
     return;
   }
 
-
-  let products = getGiftivaProducts();
-
-
-  products = products.filter(function(product) {
-
-    const countryMatch =
-      product.country === country;
-
-    const regionMatch =
-      !region ||
-      product.region === region;
-
-    const cityMatch =
-      !city ||
-      product.city === city;
-
-    const categoryMatch =
-      !category ||
-      product.category === category;
-
-    return (
-      countryMatch &&
-      regionMatch &&
-      cityMatch &&
-      categoryMatch
-    );
-
-  });
-
-
-  displayMarketplaceProducts(products);
-
-}
-
-
-/* ---------------------------------------------------------
-   DISPLAY MARKETPLACE PRODUCTS
-   --------------------------------------------------------- */
-
-function displayMarketplaceProducts(products) {
-
-  const container =
-    document.getElementById("marketplace-results");
-
-  if (!container) {
+  if (!region) {
 
     alert(
-      "Marketplace search is ready. The product display section will be connected in the next step."
+      "Please select a state / region."
     );
 
     return;
   }
 
+  if (!city) {
 
-  if (!products.length) {
-
-    container.innerHTML = `
-      <div class="empty-state">
-        <span>🔍</span>
-        <h3>No products found</h3>
-        <p>
-          We couldn't find products matching your destination.
-          Try another city, category or location.
-        </p>
-      </div>
-    `;
-
-    container.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
+    alert(
+      "Please select a city."
+    );
 
     return;
   }
-
-
-  container.innerHTML = products.map(function(product) {
-
-    return `
-      <article class="product-card">
-
-        <div class="product-image">
-          ${product.image}
-        </div>
-
-        <div class="product-content">
-
-          <span class="product-label">
-            ${product.category}
-          </span>
-
-          <h3>
-            ${product.name}
-          </h3>
-
-          <p>
-            ${product.description}
-          </p>
-
-          <div class="product-rating">
-            ★ ${product.rating}
-          </div>
-
-          <p class="product-vendor">
-            ✓ ${product.vendor}
-          </p>
-
-          <p class="product-delivery">
-            🚚 ${product.delivery}
-          </p>
-
-          <div class="product-bottom">
-
-            <strong>
-              ${formatPrice(
-                product.price,
-                product.currency
-              )}
-            </strong>
-
-            <button
-              type="button"
-              class="btn btn-small btn-gold"
-              onclick="addProductToCart('${product.id}')"
-            >
-              Choose
-            </button>
-
-          </div>
-
-        </div>
-
-      </article>
-    `;
-
-  }).join("");
-
-
-  container.scrollIntoView({
-    behavior: "smooth",
-    block: "start"
-  });
-
-}
-
-
-/* ---------------------------------------------------------
-   CATEGORY SELECTION
-   --------------------------------------------------------- */
-
-function selectCategory(categoryName) {
-
-  const category =
-    document.getElementById("category");
-
-  if (category) {
-    category.value = categoryName;
-  }
-
-
-  const marketplace =
-    document.getElementById("marketplace");
-
-  if (marketplace) {
-
-    marketplace.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
-
-  }
-
-
-  showCategory(categoryName);
-}
-
-
-function showCategory(categoryName) {
-
-  const title =
-    document.getElementById("category-title");
-
-  if (title) {
-    title.textContent = categoryName;
-  }
-
-
-  const country =
-    document.getElementById("country");
 
   if (
-    country &&
-    country.value
+    typeof getGiftivaProducts !==
+    "function"
   ) {
 
-    findItems();
+    alert(
+      "GIFTIVA products could not be loaded."
+    );
 
     return;
   }
 
-
   const products =
-    getProductsByCategory(categoryName);
+    getGiftivaProducts();
 
-  displayMarketplaceProducts(products);
+  const filteredProducts =
+    products.filter(
+      function(product) {
 
+        const countryMatch =
+          product.country === country;
+
+        const regionMatch =
+          product.region === region ||
+          normalizeLocation(
+            product.region
+          ) ===
+          normalizeLocation(
+            region
+          );
+
+        const cityMatch =
+          product.city === city ||
+          normalizeLocation(
+            product.city
+          ) ===
+          normalizeLocation(
+            city
+          );
+
+        const categoryMatch =
+          !category ||
+          product.category ===
+          category;
+
+        return (
+          countryMatch &&
+          regionMatch &&
+          cityMatch &&
+          categoryMatch
+        );
+      }
+    );
+
+  displayMarketplaceProducts(
+    filteredProducts
+  );
+
+  const section =
+    document.getElementById(
+      "marketplace-results-section"
+    );
+
+  if (section) {
+
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  }
 }
 
+/* =========================================
+   LOCATION NORMALIZATION
+   ========================================= */
 
-/* ---------------------------------------------------------
-   ADD PRODUCT TO CART
-   --------------------------------------------------------- */
+function normalizeLocation(value) {
 
-function addProductToCart(productId) {
+  if (!value) {
+    return "";
+  }
+
+  return value
+    .toLowerCase()
+    .replace(
+      /\b(state|province|region)\b/g,
+      ""
+    )
+    .replace(
+      /\s+/g,
+      " "
+    )
+    .trim();
+}
+
+/* =========================================
+   DISPLAY PRODUCTS
+   ========================================= */
+
+function displayMarketplaceProducts(
+  products
+) {
+
+  const results =
+    document.getElementById(
+      "marketplace-results"
+    );
+
+  if (!results) {
+    return;
+  }
+
+  if (
+    !products ||
+    products.length === 0
+  ) {
+
+    results.innerHTML = `
+
+      <div class="empty-state">
+
+        <div class="empty-state-icon">
+          🔍
+        </div>
+
+        <h3>
+          No products found
+        </h3>
+
+        <p>
+          We don't have a product available
+          for this destination yet.
+        </p>
+
+      </div>
+
+    `;
+
+    return;
+  }
+
+  results.innerHTML =
+    products
+      .map(function(product) {
+
+        return `
+
+          <article class="product-card">
+
+            <div class="product-image">
+              ${product.image || "🎁"}
+            </div>
+
+            <div class="product-info">
+
+              <span class="product-category">
+                ${product.category}
+              </span>
+
+              <h3>
+                ${product.name}
+              </h3>
+
+              <p>
+                ${product.description}
+              </p>
+
+              <div class="product-meta">
+
+                <span>
+                  ⭐ ${product.rating}
+                </span>
+
+                <span>
+                  🚚 ${product.delivery}
+                </span>
+
+              </div>
+
+              <div class="product-meta">
+
+                <span>
+                  ✓ ${product.vendor}
+                </span>
+
+                <span>
+                  ${product.city}
+                </span>
+
+              </div>
+
+              <div class="product-bottom">
+
+                <strong>
+                  ${formatPrice(
+                    product.price,
+                    product.currency
+                  )}
+                </strong>
+
+                <button
+                  class="btn btn-gold"
+                  onclick="addProductToCart('${product.id}')">
+                  Choose
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+        `;
+
+      })
+      .join("");
+}
+
+/* =========================================
+   CATEGORY
+   ========================================= */
+
+function selectCategory(
+  categoryName
+) {
+
+  const category =
+    document.getElementById(
+      "category"
+    );
+
+  if (!category) {
+    return;
+  }
+
+  if (
+    categoryName === "All"
+  ) {
+
+    category.value = "";
+
+  } else {
+
+    category.value =
+      categoryName;
+  }
+
+  if (
+    typeof getGiftivaProducts !==
+    "function"
+  ) {
+    return;
+  }
+
+  const products =
+    getGiftivaProducts();
+
+  const filteredProducts =
+    categoryName === "All"
+      ? products
+      : products.filter(
+          function(product) {
+            return (
+              product.category ===
+              categoryName
+            );
+          }
+        );
+
+  displayMarketplaceProducts(
+    filteredProducts
+  );
+
+  const section =
+    document.getElementById(
+      "marketplace-results-section"
+    );
+
+  if (section) {
+
+    section.scrollIntoView({
+      behavior: "smooth"
+    });
+  }
+}
+
+function showCategory(
+  categoryName
+) {
+  selectCategory(
+    categoryName
+  );
+}
+
+/* =========================================
+   CART
+   ========================================= */
+
+function addProductToCart(
+  productId
+) {
+
+  if (
+    typeof getProductById !==
+    "function"
+  ) {
+
+    alert(
+      "Product system is not available."
+    );
+
+    return;
+  }
 
   const product =
-    getProductById(productId);
+    getProductById(
+      productId
+    );
 
   if (!product) {
 
     alert(
-      "We couldn't find this product."
+      "Product could not be found."
     );
 
     return;
   }
-
 
   cart.push(product);
 
-
   alert(
     product.name +
-    " has been added to your GIFTIVA cart. 🛍️\n\n" +
-    "Cart items: " +
-    cart.length
+    " has been selected for your GIFTIVA order. 🎁"
   );
-
 }
 
-
-/* ---------------------------------------------------------
-   OLD CART FUNCTION
-   --------------------------------------------------------- */
-
-function addToCart(productName, price) {
+function addToCart(
+  productName,
+  price
+) {
 
   cart.push({
-    id: "legacy-" + Date.now(),
     name: productName,
-    price: price,
-    currency: "NGN"
+    price: price
   });
-
 
   alert(
     productName +
-    " has been added to your GIFTIVA cart. 🛍️\n\n" +
-    "Cart items: " +
-    cart.length
+    " has been added to your selection. 🎁"
   );
-
 }
 
+/* =========================================
+   MOTORS
+   ========================================= */
 
-/* ---------------------------------------------------------
-   GIFTIVA MOTORS
-   --------------------------------------------------------- */
+function carAction(
+  action
+) {
 
-function carAction(action) {
+  const messages = {
 
-  const actions = {
+    buy:
+      "GIFTIVA Motors — Browse cars coming next. 🚘",
 
-    buy: "Buy a Car",
+    sell:
+      "GIFTIVA Motors — Vehicle listing will be available next. 🚗",
 
-    sell: "Sell a Car",
+    rent:
+      "GIFTIVA Motors — Car rentals will be available next. 🔑",
 
-    rent: "Rent a Car",
-
-    chauffeur: "Hire With Driver"
+    chauffeur:
+      "GIFTIVA Motors — Chauffeur bookings will be available next. 👨‍✈️"
 
   };
 
-
-  const title =
-    actions[action] ||
-    "GIFTIVA Motors";
-
-
   alert(
-    title +
-    " selected. 🚘\n\n" +
-    "This section will connect to verified vehicle sellers, rental companies and chauffeur providers."
+    messages[action] ||
+    "GIFTIVA Motors coming soon."
   );
-
 }
-
 
 function searchCars() {
 
-  const make =
-    document.getElementById("car-make");
-
-  const type =
-    document.getElementById("car-type");
-
-  const condition =
-    document.getElementById("car-condition");
-
-
-  const makeValue =
-    make ? make.value : "";
-
-  const typeValue =
-    type ? type.value : "";
-
-  const conditionValue =
-    condition ? condition.value : "";
-
-
-  if (
-    !makeValue &&
-    !typeValue &&
-    !conditionValue
-  ) {
-
-    alert(
-      "Please select at least one vehicle search option."
-    );
-
-    return;
-  }
-
-
   alert(
-    "Searching GIFTIVA Motors 🚘\n\n" +
-
-    "Make: " +
-    (makeValue || "Any") +
-
-    "\n" +
-
-    "Type: " +
-    (typeValue || "Any") +
-
-    "\n" +
-
-    "Condition: " +
-    (conditionValue || "Any") +
-
-    "\n\n" +
-
-    "Live vehicle listings will appear here once the Motors database is connected."
+    "GIFTIVA Motors search will be connected next. 🚘"
   );
-
 }
 
-
-/* ---------------------------------------------------------
+/* =========================================
    LOGIN
-   --------------------------------------------------------- */
+   ========================================= */
 
 function openLogin() {
 
   const modal =
-    document.getElementById("loginModal");
+    document.getElementById(
+      "loginModal"
+    );
 
   if (modal) {
-    modal.classList.add("active");
+    modal.classList.add(
+      "active"
+    );
   }
-
 }
 
+function closeLogin() {
 
-/* ---------------------------------------------------------
-   SIGN UP
-   --------------------------------------------------------- */
+  const modal =
+    document.getElementById(
+      "loginModal"
+    );
+
+  if (modal) {
+    modal.classList.remove(
+      "active"
+    );
+  }
+}
+
+/* =========================================
+   SIGNUP
+   ========================================= */
 
 function openSignup() {
 
   const modal =
-    document.getElementById("signupModal");
+    document.getElementById(
+      "signupModal"
+    );
 
   if (modal) {
-    modal.classList.add("active");
+    modal.classList.add(
+      "active"
+    );
   }
-
 }
 
-
-/* ---------------------------------------------------------
-   VENDOR APPLICATION
-   --------------------------------------------------------- */
-
-function openVendorApplication() {
+function closeSignup() {
 
   const modal =
-    document.getElementById("vendorModal");
+    document.getElementById(
+      "signupModal"
+    );
 
   if (modal) {
-    modal.classList.add("active");
+    modal.classList.remove(
+      "active"
+    );
   }
-
 }
 
+/* =========================================
+   VENDOR
+   ========================================= */
 
-/* ---------------------------------------------------------
-   CLOSE MODAL
-   --------------------------------------------------------- */
-
-function closeModal(modalId) {
+function openVendorModal() {
 
   const modal =
-    document.getElementById(modalId);
+    document.getElementById(
+      "vendorModal"
+    );
 
   if (modal) {
-    modal.classList.remove("active");
+    modal.classList.add(
+      "active"
+    );
   }
-
 }
 
+function closeVendorModal() {
 
-/* ---------------------------------------------------------
-   DEMO SUBMISSION
-   --------------------------------------------------------- */
+  const modal =
+    document.getElementById(
+      "vendorModal"
+    );
 
-function demoSubmit(formType) {
+  if (modal) {
+    modal.classList.remove(
+      "active"
+    );
+  }
+}
 
-  const messages = {
+/* =========================================
+   DEMO FORM
+   ========================================= */
 
-    login:
-      "Login functionality will be connected to the secure GIFTIVA customer account system.",
+function demoSubmit(
+  event
+) {
 
-    signup:
-      "Your GIFTIVA account registration will be connected to the secure customer system.",
-
-    vendor:
-      "Your vendor application will be sent to the GIFTIVA verification team."
-
-  };
-
+  if (event) {
+    event.preventDefault();
+  }
 
   alert(
-    messages[formType] ||
-    "Your information will be securely processed by GIFTIVA."
+    "Thank you for choosing GIFTIVA. ❤️"
   );
-
-
-  if (formType === "login") {
-    closeModal("loginModal");
-  }
-
-  if (formType === "signup") {
-    closeModal("signupModal");
-  }
-
-  if (formType === "vendor") {
-    closeModal("vendorModal");
-  }
-
 }
 
-
-/* ---------------------------------------------------------
-   ORDER TRACKING
-   --------------------------------------------------------- */
+/* =========================================
+   TRACK ORDER
+   ========================================= */
 
 function trackOrder() {
 
   const input =
-    document.getElementById("trackingNumber");
+    document.getElementById(
+      "orderNumber"
+    );
 
+  const result =
+    document.getElementById(
+      "tracking-result"
+    );
 
-  if (!input) return;
+  if (!input || !result) {
+    return;
+  }
 
-
-  const trackingNumber =
+  const orderNumber =
     input.value.trim();
 
-
-  if (!trackingNumber) {
+  if (!orderNumber) {
 
     alert(
-      "Please enter your GIFTIVA tracking number."
+      "Please enter your order number."
     );
 
     return;
   }
 
+  result.innerHTML = `
 
-  alert(
-    "Tracking number: " +
-    trackingNumber +
+    <div class="tracking-status">
 
-    "\n\nOrder confirmed ✓" +
+      <h3>
+        Order ${orderNumber}
+      </h3>
 
-    "\n\nYour full live tracking timeline will appear here once the GIFTIVA order system is connected."
-  );
+      <p>
+        Your GIFTIVA order tracking system
+        will be connected to live orders next.
+      </p>
 
+    </div>
+
+  `;
 }
 
+/* =========================================
+   MODALS
+   ========================================= */
 
-/* ---------------------------------------------------------
-   CLOSE MODALS BY CLICKING OUTSIDE
-   --------------------------------------------------------- */
+function initializeModals() {
 
-document.addEventListener(
-  "click",
-  function(event) {
+  document
+    .querySelectorAll(".modal")
+    .forEach(function(modal) {
 
-    if (
-      event.target.classList.contains("modal")
-    ) {
+      modal.addEventListener(
+        "click",
+        function(event) {
 
-      event.target.classList.remove(
-        "active"
+          if (
+            event.target ===
+            modal
+          ) {
+
+            modal.classList.remove(
+              "active"
+            );
+          }
+        }
       );
+    });
 
+  document.addEventListener(
+    "keydown",
+    function(event) {
+
+      if (
+        event.key === "Escape"
+      ) {
+
+        document
+          .querySelectorAll(
+            ".modal"
+          )
+          .forEach(
+            function(modal) {
+
+              modal.classList.remove(
+                "active"
+              );
+
+            }
+          );
+      }
     }
+  );
+}
 
-  }
-);
+/* =========================================
+   INITIALIZE GIFTIVA
+   ========================================= */
 
+function initializeGiftiva() {
 
-/* ---------------------------------------------------------
-   ESCAPE KEY
-   --------------------------------------------------------- */
+  populateCountries();
 
-document.addEventListener(
-  "keydown",
-  function(event) {
+  const {
+    country,
+    region
+  } = getLocationElements();
 
-    if (event.key !== "Escape") {
-      return;
-    }
+  if (country) {
 
-
-    document
-      .querySelectorAll(".modal.active")
-      .forEach(function(modal) {
-
-        modal.classList.remove(
-          "active"
-        );
-
-      });
-
-  }
-);
-
-
-/* ---------------------------------------------------------
-   PAGE INITIALIZATION
-   --------------------------------------------------------- */
-
-document.addEventListener(
-  "DOMContentLoaded",
-  function() {
-
-    const country =
-      document.getElementById("country");
-
-    const region =
-      document.getElementById("region");
-
-
-    if (country) {
-
-      country.addEventListener(
-        "change",
-        updateRegions
-      );
-
-    }
-
-
-    if (region) {
-
-      region.addEventListener(
-        "change",
-        updateCities
-      );
-
-    }
-
-
-    console.log(
-      "GIFTIVA Marketplace loaded successfully. 🌍🎁"
+    country.addEventListener(
+      "change",
+      updateRegions
     );
-
   }
-);
+
+  if (region) {
+
+    region.addEventListener(
+      "change",
+      updateCities
+    );
+  }
+
+  initializeModals();
+
+  console.log(
+    "GIFTIVA initialized successfully."
+  );
+}
+
+/* =========================================
+   START
+   ========================================= */
+
+if (
+  document.readyState ===
+  "loading"
+) {
+
+  document.addEventListener(
+    "DOMContentLoaded",
+    initializeGiftiva
+  );
+
+} else {
+
+  initializeGiftiva();
+
+}
