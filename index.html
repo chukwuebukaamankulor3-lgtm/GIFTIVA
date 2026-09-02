@@ -3,11 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>GIFTIVA — Send Love. Anywhere. 🌍🎁</title>
+
   <meta
     name="description"
     content="GIFTIVA — A luxury worldwide marketplace for gifts, flowers, food, cakes, jewelry, experiences, cars, rentals and chauffeur services."
   >
+
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -68,7 +71,6 @@
 
         <div class="location-grid">
 
-          <!-- COUNTRY -->
           <div class="input-group">
             <label for="country">Country</label>
 
@@ -115,7 +117,6 @@
           </div>
 
 
-          <!-- REGION -->
           <div class="input-group">
             <label for="region">State / Region</label>
 
@@ -125,7 +126,6 @@
           </div>
 
 
-          <!-- CITY -->
           <div class="input-group">
             <label for="city">City</label>
 
@@ -135,7 +135,6 @@
           </div>
 
 
-          <!-- CATEGORY -->
           <div class="input-group">
             <label for="category">What are you sending?</label>
 
@@ -220,6 +219,7 @@
 
   <!-- MARKETPLACE -->
   <section id="marketplace" class="section marketplace-section">
+
     <div class="container">
 
       <div class="section-heading">
@@ -237,11 +237,13 @@
       </div>
 
     </div>
+
   </section>
 
 
   <!-- FEATURED -->
   <section class="section">
+
     <div class="container">
 
       <div class="section-heading">
@@ -253,6 +255,7 @@
 
         <div class="product-card">
           <div class="product-image">🌹</div>
+
           <div class="product-info">
             <span class="product-tag">GIFT</span>
             <h3>Forever Rose Box</h3>
@@ -261,8 +264,10 @@
           </div>
         </div>
 
+
         <div class="product-card">
           <div class="product-image">🎂</div>
+
           <div class="product-info">
             <span class="product-tag">CAKE</span>
             <h3>Classic Celebration Cake</h3>
@@ -271,8 +276,10 @@
           </div>
         </div>
 
+
         <div class="product-card">
           <div class="product-image">🎁</div>
+
           <div class="product-info">
             <span class="product-tag">LUXURY</span>
             <h3>Luxury Love Hamper</h3>
@@ -284,11 +291,13 @@
       </div>
 
     </div>
+
   </section>
 
 
   <!-- GIFTIVA MOTORS -->
   <section id="motors" class="section motors-section">
+
     <div class="container">
 
       <div class="section-heading">
@@ -330,16 +339,19 @@
       </div>
 
     </div>
+
   </section>
 
 
   <!-- VERIFIED -->
   <section class="section verified-section">
+
     <div class="container">
 
       <div class="section-heading">
         <p class="eyebrow">TRUSTED MARKETPLACE</p>
         <h2>GIFTIVA Verified ✓</h2>
+
         <p>
           We review businesses and sellers so customers can shop with confidence.
         </p>
@@ -368,11 +380,13 @@
       </div>
 
     </div>
+
   </section>
 
 
   <!-- HOW IT WORKS -->
   <section id="how-it-works" class="section">
+
     <div class="container">
 
       <div class="section-heading">
@@ -421,16 +435,20 @@
       </div>
 
     </div>
+
   </section>
 
 
   <!-- VENDOR CTA -->
   <section class="section vendor-section">
+
     <div class="container vendor-content">
 
       <div>
         <p class="eyebrow">FOR BUSINESSES</p>
+
         <h2>Sell With GIFTIVA</h2>
+
         <p>
           Join our worldwide marketplace and reach customers looking for
           beautiful gifts, food, luxury products and experiences.
@@ -442,11 +460,13 @@
       </button>
 
     </div>
+
   </section>
 
 
   <!-- TRACKING -->
   <section id="tracking" class="section tracking-section">
+
     <div class="container">
 
       <div class="section-heading">
@@ -472,6 +492,7 @@
       <div id="trackingResult"></div>
 
     </div>
+
   </section>
 
 
@@ -481,6 +502,7 @@
     <div class="container footer-grid">
 
       <div>
+
         <a href="#" class="logo">
           GIFTIVA
           <span>Send Love. Anywhere. 🌍🎁</span>
@@ -490,7 +512,9 @@
           A luxury worldwide marketplace connecting people through gifts,
           food, experiences and premium services.
         </p>
+
       </div>
+
 
       <div>
         <h3>Marketplace</h3>
@@ -500,6 +524,7 @@
         <a href="#categories">Experiences</a>
       </div>
 
+
       <div>
         <h3>GIFTIVA Motors</h3>
         <a href="#motors">Buy a Car</a>
@@ -507,6 +532,7 @@
         <a href="#motors">Rent a Car</a>
         <a href="#motors">Chauffeur</a>
       </div>
+
 
       <div>
         <h3>Help</h3>
@@ -517,6 +543,7 @@
       </div>
 
     </div>
+
 
     <div class="footer-bottom">
       <p>© 2026 GIFTIVA. All rights reserved.</p>
@@ -536,17 +563,47 @@
       <h2>Welcome Back</h2>
       <p>Login to your GIFTIVA account.</p>
 
+
+      <!-- GOOGLE -->
+      <button
+        type="button"
+        id="googleLoginBtn"
+        class="btn btn-outline auth-social-btn"
+      >
+        Continue with Google
+      </button>
+
+
+      <!-- APPLE -->
+      <button
+        type="button"
+        id="appleLoginBtn"
+        class="btn btn-outline auth-social-btn"
+      >
+        Continue with Apple
+      </button>
+
+
+      <div class="auth-divider">
+        <span>OR</span>
+      </div>
+
+
       <form id="loginForm">
 
         <input
           type="email"
+          id="loginEmail"
           placeholder="Email address"
+          autocomplete="email"
           required
         >
 
         <input
           type="password"
+          id="loginPassword"
           placeholder="Password"
+          autocomplete="current-password"
           required
         >
 
@@ -555,6 +612,14 @@
         </button>
 
       </form>
+
+
+      <p class="auth-switch">
+        Don't have an account?
+        <button type="button" id="switchToSignup">
+          Sign up
+        </button>
+      </p>
 
     </div>
 
@@ -571,29 +636,64 @@
       <h2>Create Your Account</h2>
       <p>Join GIFTIVA today.</p>
 
+
+      <!-- GOOGLE -->
+      <button
+        type="button"
+        id="googleSignupBtn"
+        class="btn btn-outline auth-social-btn"
+      >
+        Continue with Google
+      </button>
+
+
+      <!-- APPLE -->
+      <button
+        type="button"
+        id="appleSignupBtn"
+        class="btn btn-outline auth-social-btn"
+      >
+        Continue with Apple
+      </button>
+
+
+      <div class="auth-divider">
+        <span>OR</span>
+      </div>
+
+
       <form id="signupForm">
 
         <input
           type="text"
+          id="signupName"
           placeholder="Full name"
+          autocomplete="name"
           required
         >
 
         <input
           type="email"
+          id="signupEmail"
           placeholder="Email address"
+          autocomplete="email"
           required
         >
 
         <input
           type="tel"
+          id="signupPhone"
           placeholder="Phone number"
+          autocomplete="tel"
           required
         >
 
         <input
           type="password"
+          id="signupPassword"
           placeholder="Create password"
+          autocomplete="new-password"
+          minlength="6"
           required
         >
 
@@ -602,6 +702,14 @@
         </button>
 
       </form>
+
+
+      <p class="auth-switch">
+        Already have an account?
+        <button type="button" id="switchToLogin">
+          Login
+        </button>
+      </p>
 
     </div>
 
@@ -620,6 +728,7 @@
       <p>
         Apply to sell your products and services on GIFTIVA.
       </p>
+
 
       <form id="vendorForm">
 
@@ -682,7 +791,10 @@
   </div>
 
 
-  <!-- IMPORTANT: PRODUCTS FIRST, SCRIPT SECOND -->
+  <!-- SUPABASE -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- GIFTIVA FILES -->
   <script src="products.js"></script>
   <script src="script.js"></script>
 
