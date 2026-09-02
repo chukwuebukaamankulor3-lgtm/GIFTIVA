@@ -3,281 +3,567 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GIFTIVA — Send Love. Anywhere.</title>
-  <meta name="description" content="GIFTIVA — Luxury gifts, flowers, food and beautiful surprises delivered anywhere.">
+  <title>GIFTIVA — Send Love. Anywhere. 🌍🎁</title>
+  <meta name="description" content="GIFTIVA — Send gifts, flowers, food and beautiful surprises anywhere in the world.">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <header class="header">
-    <div class="logo">GIFTIVA <span>✦</span></div>
+<header class="header">
+  <div class="logo">GIFTIVA <span>✦</span></div>
 
-    <nav>
-      <a href="#gifts">Gifts</a>
-      <a href="#food">Food</a>
-      <a href="#flowers">Flowers</a>
-      <a href="#cakes">Cakes</a>
-      <a href="#boxes">Gift Boxes</a>
-      <a href="#track">Track Order</a>
-    </nav>
+  <nav>
+    <a href="#gifts">Gifts</a>
+    <a href="#food">Food</a>
+    <a href="#flowers">Flowers</a>
+    <a href="#cakes">Cakes</a>
+    <a href="#boxes">Gift Boxes</a>
+    <a href="#track">Track Order</a>
+  </nav>
 
-    <button class="cart">Cart 🛒</button>
-  </header>
+  <button class="cart">Cart 🛒</button>
+</header>
 
-  <main>
+<main>
 
-    <section class="hero">
-      <div class="hero-content">
-        <p class="eyebrow">GIFTIVA ✦ GLOBAL GIFT DELIVERY</p>
+<section class="hero">
+  <div class="hero-content">
+    <p class="eyebrow">GIFTIVA ✦ GLOBAL GIFT DELIVERY</p>
 
-        <h1>MAKE SOMEONE’S DAY<br>UNFORGETTABLE.</h1>
+    <h1>MAKE SOMEONE'S DAY<br>UNFORGETTABLE.</h1>
 
-        <p>
-          Luxury gifts, flowers, food and beautiful surprises delivered
-          to someone special — wherever they are.
-        </p>
+    <p>
+      Luxury gifts, flowers, food and beautiful surprises delivered
+      to someone special — wherever they are.
+    </p>
 
-        <div class="hero-buttons">
-          <a href="#gifts" class="btn gold">Explore Gifts</a>
-          <a href="#food" class="btn outline">Send Food</a>
-        </div>
-      </div>
-    </section>
+    <div class="hero-buttons">
+      <a href="#gifts" class="btn gold">Explore Gifts</a>
+      <a href="#food" class="btn outline">Send Food</a>
+    </div>
+  </div>
+</section>
 
-    <section class="destination">
-      <h2>Where are you sending love?</h2>
 
-      <div class="selectors">
-        <select>
-          <option>Select Country</option>
-          <option>Nigeria — Abia</option>
-<option>Nigeria — Adamawa</option>
-<option>Nigeria — Akwa Ibom</option>
-<option>Nigeria — Anambra</option>
-<option>Nigeria — Bauchi</option>
-<option>Nigeria — Bayelsa</option>
-<option>Nigeria — Benue</option>
-<option>Nigeria — Borno</option>
-<option>Nigeria — Cross River</option>
-<option>Nigeria — Delta</option>
-<option>Nigeria — Ebonyi</option>
-<option>Nigeria — Edo</option>
-<option>Nigeria — Ekiti</option>
-<option>Nigeria — Enugu</option>
-<option>Nigeria — Gombe</option>
-<option>Nigeria — Imo</option>
-<option>Nigeria — Jigawa</option>
-<option>Nigeria — Kaduna</option>
-<option>Nigeria — Kano</option>
-<option>Nigeria — Katsina</option>
-<option>Nigeria — Kebbi</option>
-<option>Nigeria — Kogi</option>
-<option>Nigeria — Kwara</option>
-<option>Nigeria — Lagos</option>
-<option>Nigeria — Nasarawa</option>
-<option>Nigeria — Niger</option>
-<option>Nigeria — Ogun</option>
-<option>Nigeria — Ondo</option>
-<option>Nigeria — Osun</option>
-<option>Nigeria — Oyo</option>
-<option>Nigeria — Plateau</option>
-<option>Nigeria — Rivers</option>
-<option>Nigeria — Sokoto</option>
-<option>Nigeria — Taraba</option>
-<option>Nigeria — Yobe</option>
-<option>Nigeria — Zamfara</option>
-<option>Nigeria — FCT (Abuja)</option>
-          <option>United Kingdom 🇬🇧</option>
-          <option>United States 🇺🇸</option>
-          <option>Canada 🇨🇦</option>
-          <option>France 🇫🇷</option>
-          <option>Australia 🇦🇺</option>
-        </select>
+<section class="destination">
+  <h2>Where are you sending love?</h2>
 
-        <select>
-          <option>Select City</option>
-          <option>Lagos</option>
-          <option>Abuja</option>
-          <option>London</option>
-          <option>New York</option>
-          <option>Toronto</option>
-          <option>Paris</option>
-          <option>Sydney</option>
-        </select>
+  <div class="selectors">
 
-        <button class="btn gold">Find Gifts</button>
-      </div>
-    </section>
+    <select id="country">
+      <option value="">Select Country</option>
+      <option value="nigeria">Nigeria 🇳🇬</option>
+      <option value="uk">United Kingdom 🇬🇧</option>
+      <option value="usa">United States 🇺🇸</option>
+      <option value="canada">Canada 🇨🇦</option>
+      <option value="france">France 🇫🇷</option>
+      <option value="germany">Germany 🇩🇪</option>
+      <option value="italy">Italy 🇮🇹</option>
+      <option value="spain">Spain 🇪🇸</option>
+      <option value="netherlands">Netherlands 🇳🇱</option>
+      <option value="ireland">Ireland 🇮🇪</option>
+      <option value="australia">Australia 🇦🇺</option>
+      <option value="new-zealand">New Zealand 🇳🇿</option>
+      <option value="south-africa">South Africa 🇿🇦</option>
+      <option value="ghana">Ghana 🇬🇭</option>
+      <option value="kenya">Kenya 🇰🇪</option>
+      <option value="uae">United Arab Emirates 🇦🇪</option>
+    </select>
 
-    <section class="categories" id="gifts">
-      <div class="section-title">
-        <p class="eyebrow">SHOP BY CATEGORY</p>
-        <h2>Find Something Beautiful</h2>
-      </div>
+    <select id="state">
+      <option value="">Select State / Region</option>
+    </select>
 
-      <div class="category-grid">
-        <div class="category-card">
-          <div class="category-icon">🌹</div>
-          <h3>Flowers</h3>
-          <p>Beautiful blooms for every occasion.</p>
-        </div>
+    <select id="city">
+      <option value="">Select City</option>
+    </select>
 
-        <div class="category-card">
-          <div class="category-icon">🎂</div>
-          <h3>Cakes</h3>
-          <p>Sweet celebrations delivered.</p>
-        </div>
+    <button class="btn gold" onclick="findGifts()">Find Gifts</button>
 
-        <div class="category-card">
-          <div class="category-icon">🍫</div>
-          <h3>Chocolates</h3>
-          <p>Premium treats for someone special.</p>
-        </div>
+  </div>
 
-        <div class="category-card">
-          <div class="category-icon">🧸</div>
-          <h3>Teddy Bears</h3>
-          <p>A little love they can hold.</p>
-        </div>
+  <p id="locationMessage"></p>
+</section>
 
-        <div class="category-card">
-          <div class="category-icon">🎁</div>
-          <h3>Gift Boxes</h3>
-          <p>Luxury surprises made with love.</p>
-        </div>
 
-        <div class="category-card">
-          <div class="category-icon">🍽️</div>
-          <h3>Food</h3>
-          <p>Send a delicious meal anywhere.</p>
-        </div>
+<section class="categories" id="gifts">
 
-        <div class="category-card">
-          <div class="category-icon">💎</div>
-          <h3>Jewelry</h3>
-          <p>Elegant gifts they'll treasure.</p>
-        </div>
+  <div class="section-title">
+    <p class="eyebrow">SHOP BY CATEGORY</p>
+    <h2>Find Something Beautiful</h2>
+  </div>
 
-        <div class="category-card">
-          <div class="category-icon">✨</div>
-          <h3>Personalized</h3>
-          <p>Make your gift truly their own.</p>
-        </div>
-      </div>
-    </section>
+  <div class="category-grid">
 
-    <section class="featured">
-      <div class="section-title">
-        <p class="eyebrow">GIFTIVA COLLECTION</p>
-        <h2>Beautiful Gifts. Thoughtfully Delivered.</h2>
-      </div>
-
-      <div class="product-grid">
-
-        <div class="product-card">
-          <div class="product-image">🌹</div>
-          <div class="verified">✓ Giftiva Verified</div>
-          <h3>Forever Rose Box</h3>
-          <p>Elegant preserved roses beautifully arranged.</p>
-          <strong>₦35,000</strong>
-          <button>Add to Cart</button>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🎂</div>
-          <div class="verified">✓ Giftiva Verified</div>
-          <h3>Classic Celebration Cake</h3>
-          <p>A beautiful cake for birthdays and celebrations.</p>
-          <strong>₦22,000</strong>
-          <button>Add to Cart</button>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">🎁</div>
-          <div class="verified">✓ Giftiva Verified</div>
-          <h3>Luxury Love Hamper</h3>
-          <p>A premium collection of thoughtful surprises.</p>
-          <strong>₦48,000</strong>
-          <button>Add to Cart</button>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="verified-section">
-      <div>
-        <p class="eyebrow">SHOP WITH CONFIDENCE</p>
-        <h2>Giftiva Verified ✓</h2>
-        <p>
-          We connect you with trusted local vendors so your gift
-          reaches the person you love safely and beautifully.
-        </p>
-      </div>
-
-      <div class="trust-list">
-        <div>✓ Verified Vendors</div>
-        <div>✓ Secure Payments</div>
-        <div>✓ Doorstep Delivery</div>
-        <div>✓ Order Tracking</div>
-      </div>
-    </section>
-
-    <section class="how">
-      <div class="section-title">
-        <p class="eyebrow">HOW IT WORKS</p>
-        <h2>Sending Love Is Easy</h2>
-      </div>
-
-      <div class="steps">
-
-        <div class="step">
-          <span>01</span>
-          <h3>Choose a Gift</h3>
-          <p>Find the perfect gift from a trusted local vendor.</p>
-        </div>
-
-        <div class="step">
-          <span>02</span>
-          <h3>Tell Us Where</h3>
-          <p>Enter your recipient's delivery details at checkout.</p>
-        </div>
-
-        <div class="step">
-          <span>03</span>
-          <h3>We Deliver</h3>
-          <p>Our vendor prepares the gift and delivers it to their doorstep.</p>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="vendor">
-      <p class="eyebrow">FOR BUSINESSES</p>
-      <h2>Grow Your Business With GIFTIVA.</h2>
-      <p>
-        Join our global marketplace and reach customers
-        who want to send gifts and food to people they love.
-      </p>
-      <button class="btn gold">Become a Vendor</button>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="logo">GIFTIVA <span>✦</span></div>
-    <p>Send Love. Anywhere. 🌍🎁</p>
-
-    <div class="footer-links">
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-      <a href="#">Help</a>
-      <a href="#">Track Order</a>
-      <a href="#">Become a Vendor</a>
+    <div class="category-card" id="flowers">
+      <div class="category-icon">🌹</div>
+      <h3>Flowers</h3>
+      <p>Beautiful blooms for every occasion.</p>
     </div>
 
-    <p class="copyright">© 2026 GIFTIVA. All rights reserved.</p>
-  </footer>
+    <div class="category-card" id="cakes">
+      <div class="category-icon">🎂</div>
+      <h3>Cakes</h3>
+      <p>Sweet celebrations delivered.</p>
+    </div>
+
+    <div class="category-card">
+      <div class="category-icon">🍫</div>
+      <h3>Chocolates</h3>
+      <p>Premium treats for someone special.</p>
+    </div>
+
+    <div class="category-card">
+      <div class="category-icon">🧸</div>
+      <h3>Teddy Bears</h3>
+      <p>A little love they can hold.</p>
+    </div>
+
+    <div class="category-card" id="boxes">
+      <div class="category-icon">🎁</div>
+      <h3>Gift Boxes</h3>
+      <p>Luxury surprises made with love.</p>
+    </div>
+
+    <div class="category-card" id="food">
+      <div class="category-icon">🍽️</div>
+      <h3>Food</h3>
+      <p>Send a delicious meal anywhere.</p>
+    </div>
+
+    <div class="category-card">
+      <div class="category-icon">💎</div>
+      <h3>Jewelry</h3>
+      <p>Elegant gifts they'll treasure.</p>
+    </div>
+
+    <div class="category-card">
+      <div class="category-icon">✨</div>
+      <h3>Personalized Gifts</h3>
+      <p>Make your gift truly their own.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="featured">
+
+  <div class="section-title">
+    <p class="eyebrow">GIFTIVA COLLECTION</p>
+    <h2>Beautiful Gifts. Thoughtfully Delivered.</h2>
+  </div>
+
+  <div class="product-grid">
+
+    <div class="product-card">
+      <div class="product-image">🌹</div>
+      <div class="verified">✓ Giftiva Verified</div>
+      <h3>Forever Rose Box</h3>
+      <p>Elegant preserved roses beautifully arranged.</p>
+      <strong>₦35,000</strong>
+      <button onclick="addToCart('Forever Rose Box')">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">🎂</div>
+      <div class="verified">✓ Giftiva Verified</div>
+      <h3>Classic Celebration Cake</h3>
+      <p>A beautiful cake for birthdays and celebrations.</p>
+      <strong>₦22,000</strong>
+      <button onclick="addToCart('Classic Celebration Cake')">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">🎁</div>
+      <div class="verified">✓ Giftiva Verified</div>
+      <h3>Luxury Love Hamper</h3>
+      <p>A premium collection of thoughtful surprises.</p>
+      <strong>₦48,000</strong>
+      <button onclick="addToCart('Luxury Love Hamper')">Add to Cart</button>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="verified-section">
+
+  <div>
+    <p class="eyebrow">SHOP WITH CONFIDENCE</p>
+    <h2>Giftiva Verified ✓</h2>
+
+    <p>
+      We connect customers with trusted local vendors so gifts
+      can be prepared and delivered safely and beautifully.
+    </p>
+  </div>
+
+  <div class="trust-list">
+    <div>✓ Verified Vendors</div>
+    <div>✓ Secure Payments</div>
+    <div>✓ Doorstep Delivery</div>
+    <div>✓ Order Tracking</div>
+  </div>
+
+</section>
+
+
+<section class="how">
+
+  <div class="section-title">
+    <p class="eyebrow">HOW IT WORKS</p>
+    <h2>Sending Love Is Easy</h2>
+  </div>
+
+  <div class="steps">
+
+    <div class="step">
+      <span>01</span>
+      <h3>Choose a Gift</h3>
+      <p>Find the perfect gift from a trusted local vendor.</p>
+    </div>
+
+    <div class="step">
+      <span>02</span>
+      <h3>Tell Us Where</h3>
+      <p>Select the recipient's country, state and city.</p>
+    </div>
+
+    <div class="step">
+      <span>03</span>
+      <h3>We Deliver</h3>
+      <p>Give the full delivery address at checkout.</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="vendor">
+
+  <p class="eyebrow">FOR BUSINESSES</p>
+
+  <h2>Grow Your Business With GIFTIVA.</h2>
+
+  <p>
+    Join our global marketplace and reach customers who want
+    to send gifts and food to people they love.
+  </p>
+
+  <button class="btn gold">Become a Vendor</button>
+
+</section>
+
+
+<section class="tracking" id="track">
+
+  <div class="section-title">
+    <p class="eyebrow">ORDER TRACKING</p>
+    <h2>Track Your Gift</h2>
+  </div>
+
+  <div class="tracking-box">
+
+    <input
+      type="text"
+      id="trackingNumber"
+      placeholder="Enter your order number"
+    >
+
+    <button class="btn gold" onclick="trackOrder()">
+      Track Order
+    </button>
+
+    <p id="trackingMessage"></p>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+  <div class="logo">GIFTIVA <span>✦</span></div>
+
+  <p>Send Love. Anywhere. 🌍🎁</p>
+
+  <div class="footer-links">
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+    <a href="#">Help</a>
+    <a href="#track">Track Order</a>
+    <a href="#">Become a Vendor</a>
+  </div>
+
+  <p class="copyright">
+    © 2026 GIFTIVA. All rights reserved.
+  </p>
+
+</footer>
+
+
+<script>
+
+const locations = {
+
+  nigeria: {
+    "Abia": ["Umuahia", "Aba", "Ohafia"],
+    "Adamawa": ["Yola", "Mubi", "Jimeta"],
+    "Akwa Ibom": ["Uyo", "Eket", "Ikot Ekpene"],
+    "Anambra": ["Awka", "Onitsha", "Nnewi"],
+    "Bauchi": ["Bauchi", "Azare", "Misau"],
+    "Bayelsa": ["Yenagoa", "Brass", "Sagbama"],
+    "Benue": ["Makurdi", "Gboko", "Otukpo"],
+    "Borno": ["Maiduguri", "Bama", "Biu"],
+    "Cross River": ["Calabar", "Ikom", "Ogoja"],
+    "Delta": ["Asaba", "Warri", "Sapele"],
+    "Ebonyi": ["Abakaliki", "Afikpo", "Onueke"],
+    "Edo": ["Benin City", "Auchi", "Ekpoma"],
+    "Ekiti": ["Ado-Ekiti", "Ikere", "Ilawe"],
+    "Enugu": ["Enugu", "Nsukka", "Oji River"],
+    "Gombe": ["Gombe", "Kaltungo", "Billiri"],
+    "Imo": ["Owerri", "Orlu", "Okigwe"],
+    "Jigawa": ["Dutse", "Hadejia", "Gumel"],
+    "Kaduna": ["Kaduna", "Zaria", "Kafanchan"],
+    "Kano": ["Kano", "Wudil", "Gwarzo"],
+    "Katsina": ["Katsina", "Daura", "Funtua"],
+    "Kebbi": ["Birnin Kebbi", "Argungu", "Yauri"],
+    "Kogi": ["Lokoja", "Okene", "Idah"],
+    "Kwara": ["Ilorin", "Offa", "Jebba"],
+    "Lagos": ["Lagos Island", "Ikeja", "Lekki", "Surulere"],
+    "Nasarawa": ["Lafia", "Keffi", "Karu"],
+    "Niger": ["Minna", "Suleja", "Bida"],
+    "Ogun": ["Abeokuta", "Ijebu-Ode", "Sagamu"],
+    "Ondo": ["Akure", "Ondo City", "Owo"],
+    "Osun": ["Osogbo", "Ile-Ife", "Ilesa"],
+    "Oyo": ["Ibadan", "Ogbomosho", "Oyo"],
+    "Plateau": ["Jos", "Bukuru", "Pankshin"],
+    "Rivers": ["Port Harcourt", "Bonny", "Eleme"],
+    "Sokoto": ["Sokoto", "Wamakko", "Tambuwal"],
+    "Taraba": ["Jalingo", "Wukari", "Bali"],
+    "Yobe": ["Damaturu", "Potiskum", "Nguru"],
+    "Zamfara": ["Gusau", "Kaura Namoda", "Talata Mafara"],
+    "Federal Capital Territory": ["Abuja", "Gwagwalada", "Kuje"]
+  },
+
+  uk: {
+    "England": ["London", "Manchester", "Birmingham", "Liverpool", "Leeds"],
+    "Scotland": ["Glasgow", "Edinburgh", "Aberdeen"],
+    "Wales": ["Cardiff", "Swansea", "Newport"],
+    "Northern Ireland": ["Belfast", "Derry"]
+  },
+
+  usa: {
+    "New York": ["New York City", "Buffalo", "Rochester"],
+    "California": ["Los Angeles", "San Francisco", "San Diego"],
+    "Texas": ["Houston", "Dallas", "Austin"],
+    "Florida": ["Miami", "Orlando", "Tampa"]
+  },
+
+  canada: {
+    "Ontario": ["Toronto", "Ottawa", "Hamilton"],
+    "Quebec": ["Montreal", "Quebec City"],
+    "British Columbia": ["Vancouver", "Victoria"],
+    "Alberta": ["Calgary", "Edmonton"]
+  },
+
+  france: {
+    "Île-de-France": ["Paris", "Versailles"],
+    "Provence-Alpes-Côte d'Azur": ["Marseille", "Nice"],
+    "Auvergne-Rhône-Alpes": ["Lyon", "Grenoble"]
+  },
+
+  germany: {
+    "Bavaria": ["Munich", "Nuremberg"],
+    "Berlin": ["Berlin"],
+    "Hesse": ["Frankfurt", "Wiesbaden"]
+  },
+
+  italy: {
+    "Lazio": ["Rome"],
+    "Lombardy": ["Milan", "Bergamo"],
+    "Campania": ["Naples"]
+  },
+
+  spain: {
+    "Madrid": ["Madrid"],
+    "Catalonia": ["Barcelona"],
+    "Andalusia": ["Seville", "Malaga"]
+  },
+
+  netherlands: {
+    "North Holland": ["Amsterdam", "Haarlem"],
+    "South Holland": ["Rotterdam", "The Hague"]
+  },
+
+  ireland: {
+    "Leinster": ["Dublin"],
+    "Munster": ["Cork", "Limerick"]
+  },
+
+  australia: {
+    "New South Wales": ["Sydney", "Newcastle"],
+    "Victoria": ["Melbourne", "Geelong"],
+    "Queensland": ["Brisbane", "Gold Coast"]
+  },
+
+  "new-zealand": {
+    "Auckland": ["Auckland"],
+    "Wellington": ["Wellington"],
+    "Canterbury": ["Christchurch"]
+  },
+
+  "south-africa": {
+    "Gauteng": ["Johannesburg", "Pretoria"],
+    "Western Cape": ["Cape Town"],
+    "KwaZulu-Natal": ["Durban"]
+  },
+
+  ghana: {
+    "Greater Accra": ["Accra", "Tema"],
+    "Ashanti": ["Kumasi"],
+    "Western": ["Takoradi"]
+  },
+
+  kenya: {
+    "Nairobi": ["Nairobi"],
+    "Mombasa": ["Mombasa"],
+    "Kisumu": ["Kisumu"]
+  },
+
+  uae: {
+    "Dubai": ["Dubai"],
+    "Abu Dhabi": ["Abu Dhabi"],
+    "Sharjah": ["Sharjah"]
+  }
+
+};
+
+
+const countrySelect = document.getElementById("country");
+const stateSelect = document.getElementById("state");
+const citySelect = document.getElementById("city");
+
+
+countrySelect.addEventListener("change", function() {
+
+  const country = this.value;
+
+  stateSelect.innerHTML =
+    '<option value="">Select State / Region</option>';
+
+  citySelect.innerHTML =
+    '<option value="">Select City</option>';
+
+  if (!locations[country]) return;
+
+  Object.keys(locations[country]).forEach(function(state) {
+
+    const option = document.createElement("option");
+
+    option.value = state;
+    option.textContent = state;
+
+    stateSelect.appendChild(option);
+
+  });
+
+});
+
+
+stateSelect.addEventListener("change", function() {
+
+  const country = countrySelect.value;
+  const state = this.value;
+
+  citySelect.innerHTML =
+    '<option value="">Select City</option>';
+
+  if (!locations[country] || !locations[country][state]) return;
+
+  locations[country][state].forEach(function(city) {
+
+    const option = document.createElement("option");
+
+    option.value = city;
+    option.textContent = city;
+
+    citySelect.appendChild(option);
+
+  });
+
+});
+
+
+function findGifts() {
+
+  const country = countrySelect.value;
+  const state = stateSelect.value;
+  const city = citySelect.value;
+
+  const message = document.getElementById("locationMessage");
+
+  if (!country || !state || !city) {
+
+    message.textContent =
+      "Please select a country, state/region and city.";
+
+    return;
+  }
+
+  message.textContent =
+    "Searching for Giftiva gifts available in " +
+    city + ", " + state + ". 🌍🎁";
+
+}
+
+
+let cartCount = 0;
+
+
+function addToCart(product) {
+
+  cartCount++;
+
+  document.querySelector(".cart").textContent =
+    "Cart 🛒 (" + cartCount + ")";
+
+  alert(product + " has been added to your cart. ❤️");
+
+}
+
+
+function trackOrder() {
+
+  const orderNumber =
+    document.getElementById("trackingNumber").value.trim();
+
+  const message =
+    document.getElementById("trackingMessage");
+
+  if (!orderNumber) {
+
+    message.textContent =
+      "Please enter your order number.";
+
+    return;
+
+  }
+
+  message.textContent =
+    "Your order number " +
+    orderNumber +
+    " has been received. Tracking will appear here once your order is confirmed. 📦";
+
+}
+
+</script>
 
 </body>
 </html>
