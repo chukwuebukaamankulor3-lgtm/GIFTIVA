@@ -3,181 +3,118 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta name="description" content="GIFTIVA — Send Love. Anywhere. 🌍🎁 A luxury worldwide marketplace for gifts, flowers, food, experiences, cars and services.">
   <title>GIFTIVA — Send Love. Anywhere. 🌍🎁</title>
-
-  <meta
-    name="description"
-    content="GIFTIVA is a luxury worldwide marketplace for gifts, flowers, food, cakes, jewelry, cars, rentals, chauffeur services, experiences and more."
-  >
 
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- =====================================================
-       HEADER
-       ===================================================== -->
-
+  <!-- HEADER -->
   <header class="site-header">
-    <div class="container header-inner">
+    <div class="container nav-container">
 
-      <a href="#home" class="logo">
-        GIFTIVA
-      </a>
+      <a href="#" class="logo">GIFTIVA</a>
 
       <nav class="main-nav">
         <a href="#marketplace">Marketplace</a>
-        <a href="#motors">Cars</a>
+        <a href="#motors">Motors</a>
         <a href="#how-it-works">How It Works</a>
-        <a href="#vendor">Become a Seller</a>
+        <a href="#vendors">Vendors</a>
+        <a href="#tracking">Track Order</a>
       </nav>
 
-      <div class="header-actions">
-        <button type="button" class="btn btn-outline" onclick="openLogin()">
-          Login
-        </button>
-
-        <button type="button" class="btn btn-gold" onclick="openSignup()">
-          Sign Up
-        </button>
+      <div class="nav-actions">
+        <button class="btn btn-outline" onclick="openLogin()">Login</button>
+        <button class="btn btn-gold" onclick="openSignup()">Sign Up</button>
       </div>
 
     </div>
   </header>
 
 
-  <!-- =====================================================
-       HERO
-       ===================================================== -->
-
+  <!-- HERO -->
   <main>
 
-    <section id="home" class="hero">
+    <section class="hero">
       <div class="container hero-content">
 
-        <p class="eyebrow">
-          GIFTIVA
-        </p>
+        <div class="hero-text">
+          <p class="eyebrow">THE WORLD'S LUXURY GIFT MARKETPLACE</p>
 
-        <h1>
-          Send Love.<br>
-          Anywhere. 🌍🎁
-        </h1>
+          <h1>
+            Send Love.<br>
+            <span>Anywhere. 🌍🎁</span>
+          </h1>
 
-        <p class="hero-text">
-          Discover beautiful gifts, delicious food, luxury items,
-          unforgettable experiences and more — delivered to the people
-          you love around the world.
-        </p>
+          <p class="hero-description">
+            Discover beautiful gifts, flowers, food, cakes, jewelry,
+            experiences, cars and premium services from trusted businesses
+            around the world.
+          </p>
 
-        <div class="hero-buttons">
-          <a href="#marketplace" class="btn btn-gold">
-            Explore Marketplace
-          </a>
-
-          <a href="#how-it-works" class="btn btn-outline">
-            How It Works
-          </a>
+          <div class="hero-buttons">
+            <a href="#marketplace" class="btn btn-gold">Explore Marketplace</a>
+            <a href="#vendors" class="btn btn-outline">Become a Vendor</a>
+          </div>
         </div>
 
       </div>
     </section>
 
 
-    <!-- =====================================================
-         DESTINATION SEARCH
-         ===================================================== -->
-
+    <!-- DESTINATION SEARCH -->
     <section class="destination-section">
       <div class="container">
 
         <div class="section-heading">
-          <p class="eyebrow">SHOP ANYWHERE</p>
-
-          <h2>
-            Choose Your Destination
-          </h2>
-
-          <p>
-            Select where your gift should be delivered and discover
-            available products and trusted local businesses.
-          </p>
+          <p class="eyebrow">SHOP BY DESTINATION</p>
+          <h2>Find the perfect gift</h2>
+          <p>Choose where you want your gift delivered.</p>
         </div>
 
         <div class="destination-box">
 
           <div class="form-group">
             <label for="country">Country</label>
-
-            <select id="country" onchange="updateRegions()">
-              <option value="">Select Country</option>
+            <select id="country">
+              <option value="">Select country</option>
               <option value="Nigeria">Nigeria</option>
               <option value="United Kingdom">United Kingdom</option>
               <option value="United States">United States</option>
               <option value="Canada">Canada</option>
-              <option value="France">France</option>
-              <option value="Germany">Germany</option>
-              <option value="Italy">Italy</option>
-              <option value="Spain">Spain</option>
-              <option value="Netherlands">Netherlands</option>
-              <option value="Ireland">Ireland</option>
               <option value="Australia">Australia</option>
-              <option value="New Zealand">New Zealand</option>
-              <option value="South Africa">South Africa</option>
-              <option value="Ghana">Ghana</option>
-              <option value="Kenya">Kenya</option>
-              <option value="United Arab Emirates">United Arab Emirates</option>
             </select>
           </div>
-
 
           <div class="form-group">
             <label for="region">State / Region</label>
-
-            <select id="region" onchange="updateCities()">
-              <option value="">
-                Select State / Region
-              </option>
+            <select id="region">
+              <option value="">Select state / region</option>
             </select>
           </div>
-
 
           <div class="form-group">
             <label for="city">City</label>
-
             <select id="city">
-              <option value="">
-                Select City
-              </option>
+              <option value="">Select city</option>
             </select>
           </div>
 
-
           <div class="form-group">
             <label for="category">Category</label>
-
             <select id="category">
-              <option value="">All Categories</option>
+              <option value="">All categories</option>
               <option value="Gifts & Flowers">Gifts & Flowers</option>
               <option value="Food & Cakes">Food & Cakes</option>
               <option value="Jewelry & Luxury">Jewelry & Luxury</option>
-              <option value="Cars for Sale">Cars for Sale</option>
-              <option value="Car Rentals">Car Rentals</option>
-              <option value="Car Hire">Car Hire</option>
-              <option value="Services">Services</option>
               <option value="Experiences">Experiences</option>
             </select>
           </div>
 
-
-          <button
-            type="button"
-            class="btn btn-gold search-btn"
-            onclick="findItems()"
-          >
-            Search
+          <button class="btn btn-gold search-btn" onclick="findItems()">
+            Search Marketplace
           </button>
 
         </div>
@@ -186,296 +123,166 @@
     </section>
 
 
-    <!-- =====================================================
-         MARKETPLACE
-         ===================================================== -->
+    <!-- CATEGORIES -->
+    <section class="categories-section" id="marketplace">
+      <div class="container">
 
-    <section id="marketplace" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">EXPLORE</p>
+          <h2>Shop by Category</h2>
+          <p>Something beautiful for every occasion.</p>
+        </div>
+
+        <div class="category-grid">
+
+          <button class="category-card" onclick="selectCategory('Gifts & Flowers')">
+            <span class="category-icon">🌹</span>
+            <h3>Gifts & Flowers</h3>
+            <p>Beautiful gifts & flowers</p>
+          </button>
+
+          <button class="category-card" onclick="selectCategory('Food & Cakes')">
+            <span class="category-icon">🎂</span>
+            <h3>Food & Cakes</h3>
+            <p>Delicious celebrations</p>
+          </button>
+
+          <button class="category-card" onclick="selectCategory('Jewelry & Luxury')">
+            <span class="category-icon">💎</span>
+            <h3>Jewelry & Luxury</h3>
+            <p>Luxury gifts & jewelry</p>
+          </button>
+
+          <button class="category-card" onclick="selectCategory('Experiences')">
+            <span class="category-icon">✨</span>
+            <h3>Experiences</h3>
+            <p>Unforgettable moments</p>
+          </button>
+
+          <button class="category-card" onclick="selectCategory('All')">
+            <span class="category-icon">🛍️</span>
+            <h3>All Marketplace</h3>
+            <p>Explore everything</p>
+          </button>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- LIVE MARKETPLACE RESULTS -->
+    <section class="products-section" id="marketplace-results-section">
       <div class="container">
 
         <div class="section-heading">
           <p class="eyebrow">GIFTIVA MARKETPLACE</p>
-
-          <h2>
-            Everything You Need to Send Love
-          </h2>
-
+          <h2>Available Near Your Destination</h2>
           <p>
-            Shop from trusted businesses and discover beautiful
-            products and services for every occasion.
+            Choose a destination above or select a category to discover
+            available products.
           </p>
         </div>
 
-
-        <div class="category-grid">
-
-          <button
-            type="button"
-            class="category-card"
-            onclick="selectCategory('Gifts & Flowers')"
-          >
-            <span class="category-icon">🌹</span>
-
-            <h3>Gifts & Flowers</h3>
-
+        <div id="marketplace-results" class="product-grid">
+          <div class="empty-state">
+            <div class="empty-state-icon">🎁</div>
+            <h3>Discover something special</h3>
             <p>
-              Beautiful gifts, flowers and surprises.
+              Select a country, region and city above, then search to see
+              available GIFTIVA products.
             </p>
-          </button>
-
-
-          <button
-            type="button"
-            class="category-card"
-            onclick="selectCategory('Food & Cakes')"
-          >
-            <span class="category-icon">🎂</span>
-
-            <h3>Food & Cakes</h3>
-
-            <p>
-              Cakes, meals, treats and delicious surprises.
-            </p>
-          </button>
-
-
-          <button
-            type="button"
-            class="category-card"
-            onclick="selectCategory('Jewelry & Luxury')"
-          >
-            <span class="category-icon">💎</span>
-
-            <h3>Jewelry & Luxury</h3>
-
-            <p>
-              Elegant jewelry and premium luxury gifts.
-            </p>
-          </button>
-
-
-          <button
-            type="button"
-            class="category-card"
-            onclick="selectCategory('Cars for Sale')"
-          >
-            <span class="category-icon">🚘</span>
-
-            <h3>Cars for Sale</h3>
-
-            <p>
-              Find vehicles from verified sellers.
-            </p>
-          </button>
-
-
-          <button
-            type="button"
-            class="category-card"
-            onclick="selectCategory('Car Rentals')"
-          >
-            <span class="category-icon">🚗</span>
-
-            <h3>Car Rentals</h3>
-
-            <p>
-              Rent a vehicle for your trip or occasion.
-            </p>
-          </button>
-
-
-          <button
-            type="button"
-            class="category-card"
-            onclick="selectCategory('Car Hire')"
-          >
-            <span class="category-icon">🧑🏽‍✈️</span>
-
-            <h3>Car Hire</h3>
-
-            <p>
-              Hire a professional chauffeur or driver.
-            </p>
-          </button>
-
-
-          <button
-            type="button"
-            class="category-card"
-            onclick="selectCategory('Services')"
-          >
-            <span class="category-icon">✨</span>
-
-            <h3>Services</h3>
-
-            <p>
-              Discover useful services from trusted providers.
-            </p>
-          </button>
-
-
-          <button
-            type="button"
-            class="category-card"
-            onclick="selectCategory('Experiences')"
-          >
-            <span class="category-icon">🥂</span>
-
-            <h3>Experiences</h3>
-
-            <p>
-              Create unforgettable moments anywhere.
-            </p>
-          </button>
-
+          </div>
         </div>
 
       </div>
     </section>
 
 
-    <!-- =====================================================
-         FEATURED PRODUCTS
-         ===================================================== -->
-
-    <section class="section section-dark">
+    <!-- FEATURED -->
+    <section class="featured-section">
       <div class="container">
 
         <div class="section-heading">
           <p class="eyebrow">FEATURED</p>
-
-          <h2 id="category-title">
-            Beautiful Gifts
-          </h2>
-
-          <p>
-            A glimpse of what you can discover on GIFTIVA.
-          </p>
+          <h2>Luxury Gifts</h2>
+          <p>A glimpse of what you can discover on GIFTIVA.</p>
         </div>
-
 
         <div class="product-grid">
 
           <article class="product-card">
+            <div class="product-image">🌹</div>
 
-            <div class="product-image">
-              🌹
-            </div>
+            <div class="product-info">
+              <span class="product-category">Gifts & Flowers</span>
+              <h3>Forever Rose Box</h3>
+              <p>Elegant preserved roses beautifully arranged for someone special.</p>
 
-            <div class="product-content">
-
-              <span class="product-label">
-                Gift
-              </span>
-
-              <h3>
-                Forever Rose Box
-              </h3>
-
-              <p>
-                An elegant rose arrangement for someone special.
-              </p>
-
-              <div class="product-bottom">
-
-                <strong>
-                  ₦35,000
-                </strong>
-
-                <button
-                  type="button"
-                  class="btn btn-small btn-gold"
-                  onclick="addToCart('Forever Rose Box', 35000)"
-                >
-                  Choose
-                </button>
-
+              <div class="product-meta">
+                <span>⭐ 4.9</span>
+                <span>🚚 Doorstep delivery</span>
               </div>
 
+              <div class="product-bottom">
+                <strong>₦35,000</strong>
+                <button
+                  class="btn btn-gold"
+                  onclick="addProductToCart('GFT001')">
+                  Choose
+                </button>
+              </div>
             </div>
-
           </article>
 
 
           <article class="product-card">
+            <div class="product-image">🎂</div>
 
-            <div class="product-image">
-              🎂
-            </div>
+            <div class="product-info">
+              <span class="product-category">Food & Cakes</span>
+              <h3>Classic Celebration Cake</h3>
+              <p>A beautiful premium cake made for birthdays and special celebrations.</p>
 
-            <div class="product-content">
-
-              <span class="product-label">
-                Food & Cakes
-              </span>
-
-              <h3>
-                Classic Celebration Cake
-              </h3>
-
-              <p>
-                A beautiful cake for birthdays and celebrations.
-              </p>
-
-              <div class="product-bottom">
-
-                <strong>
-                  ₦22,000
-                </strong>
-
-                <button
-                  type="button"
-                  class="btn btn-small btn-gold"
-                  onclick="addToCart('Classic Celebration Cake', 22000)"
-                >
-                  Choose
-                </button>
-
+              <div class="product-meta">
+                <span>⭐ 4.8</span>
+                <span>🚚 Doorstep delivery</span>
               </div>
 
+              <div class="product-bottom">
+                <strong>₦22,000</strong>
+                <button
+                  class="btn btn-gold"
+                  onclick="addProductToCart('GFT002')">
+                  Choose
+                </button>
+              </div>
             </div>
-
           </article>
 
 
           <article class="product-card">
+            <div class="product-image">💎</div>
 
-            <div class="product-image">
-              🎁
-            </div>
+            <div class="product-info">
+              <span class="product-category">Jewelry & Luxury</span>
+              <h3>Elegant Gold Necklace</h3>
+              <p>A timeless luxury necklace for a truly unforgettable gift.</p>
 
-            <div class="product-content">
-
-              <span class="product-label">
-                Luxury Gift
-              </span>
-
-              <h3>
-                Luxury Love Hamper
-              </h3>
-
-              <p>
-                A premium collection created for special moments.
-              </p>
-
-              <div class="product-bottom">
-
-                <strong>
-                  ₦48,000
-                </strong>
-
-                <button
-                  type="button"
-                  class="btn btn-small btn-gold"
-                  onclick="addToCart('Luxury Love Hamper', 48000)"
-                >
-                  Choose
-                </button>
-
+              <div class="product-meta">
+                <span>⭐ 5.0</span>
+                <span>🚚 Doorstep delivery</span>
               </div>
 
+              <div class="product-bottom">
+                <strong>₦125,000</strong>
+                <button
+                  class="btn btn-gold"
+                  onclick="addProductToCart('GFT005')">
+                  Choose
+                </button>
+              </div>
             </div>
-
           </article>
 
         </div>
@@ -484,237 +291,55 @@
     </section>
 
 
-    <!-- =====================================================
-         GIFTIVA MOTORS
-         ===================================================== -->
-
-    <section id="motors" class="section motors-section">
+    <!-- MOTORS -->
+    <section class="motors-section" id="motors">
       <div class="container">
 
         <div class="section-heading">
           <p class="eyebrow">GIFTIVA MOTORS</p>
-
-          <h2>
-            More Than Gifts
-          </h2>
-
+          <h2>Cars. Rentals. Chauffeurs.</h2>
           <p>
-            Buy, sell or rent vehicles and hire professional drivers
-            through trusted providers.
+            Discover vehicles and premium transportation services
+            around the world.
           </p>
         </div>
 
+        <div class="motors-grid">
 
-        <div class="motor-actions">
-
-          <button
-            type="button"
-            class="motor-card"
-            onclick="carAction('buy')"
-          >
+          <div class="motor-card">
             <span>🚘</span>
+            <h3>Buy a Car</h3>
+            <p>Find vehicles from verified sellers.</p>
+            <button class="btn btn-gold" onclick="carAction('buy')">
+              Browse Cars
+            </button>
+          </div>
 
-            <h3>
-              Buy a Car
-            </h3>
+          <div class="motor-card">
+            <span>💰</span>
+            <h3>Sell a Car</h3>
+            <p>List your vehicle on GIFTIVA Motors.</p>
+            <button class="btn btn-outline" onclick="carAction('sell')">
+              List Your Car
+            </button>
+          </div>
 
-            <p>
-              Find vehicles from verified sellers.
-            </p>
-          </button>
-
-
-          <button
-            type="button"
-            class="motor-card"
-            onclick="carAction('sell')"
-          >
-            <span>💼</span>
-
-            <h3>
-              Sell a Car
-            </h3>
-
-            <p>
-              List your vehicle on GIFTIVA Motors.
-            </p>
-          </button>
-
-
-          <button
-            type="button"
-            class="motor-card"
-            onclick="carAction('rent')"
-          >
-            <span>🚗</span>
-
-            <h3>
+          <div class="motor-card">
+            <span>🔑</span>
+            <h3>Rent a Car</h3>
+            <p>Rent premium vehicles for your trip.</p>
+            <button class="btn btn-gold" onclick="carAction('rent')">
               Rent a Car
-            </h3>
-
-            <p>
-              Find a vehicle for your preferred dates.
-            </p>
-          </button>
-
-
-          <button
-            type="button"
-            class="motor-card"
-            onclick="carAction('chauffeur')"
-          >
-            <span>🧑🏽‍✈️</span>
-
-            <h3>
-              Hire With Driver
-            </h3>
-
-            <p>
-              Travel comfortably with a professional driver.
-            </p>
-          </button>
-
-        </div>
-
-
-        <div class="car-search">
-
-          <div class="form-group">
-            <label for="car-make">
-              Make
-            </label>
-
-            <select id="car-make">
-              <option value="">Any Make</option>
-              <option value="Toyota">Toyota</option>
-              <option value="Mercedes-Benz">Mercedes-Benz</option>
-              <option value="BMW">BMW</option>
-              <option value="Lexus">Lexus</option>
-              <option value="Range Rover">Range Rover</option>
-              <option value="Honda">Honda</option>
-              <option value="Ford">Ford</option>
-              <option value="Hyundai">Hyundai</option>
-            </select>
+            </button>
           </div>
 
-
-          <div class="form-group">
-            <label for="car-type">
-              Vehicle Type
-            </label>
-
-            <select id="car-type">
-              <option value="">Any Type</option>
-              <option value="SUV">SUV</option>
-              <option value="Sedan">Sedan</option>
-              <option value="Coupe">Coupe</option>
-              <option value="Hatchback">Hatchback</option>
-              <option value="Truck">Truck</option>
-              <option value="Van">Van</option>
-            </select>
-          </div>
-
-
-          <div class="form-group">
-            <label for="car-condition">
-              Condition
-            </label>
-
-            <select id="car-condition">
-              <option value="">Any Condition</option>
-              <option value="New">New</option>
-              <option value="Used">Used</option>
-              <option value="Foreign Used">Foreign Used</option>
-            </select>
-          </div>
-
-
-          <button
-            type="button"
-            class="btn btn-gold"
-            onclick="searchCars()"
-          >
-            Search Cars
-          </button>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- =====================================================
-         VERIFIED BUSINESSES
-         ===================================================== -->
-
-    <section class="section verified-section">
-      <div class="container">
-
-        <div class="verified-content">
-
-          <div>
-            <p class="eyebrow">
-              TRUSTED PARTNERS
-            </p>
-
-            <h2>
-              Shop With Confidence
-            </h2>
-
-            <p>
-              GIFTIVA works with businesses and service providers that
-              go through a verification process before joining the
-              marketplace.
-            </p>
-          </div>
-
-
-          <div class="verified-points">
-
-            <div class="verified-point">
-              <span>✓</span>
-
-              <div>
-                <h3>
-                  Giftiva Verified
-                </h3>
-
-                <p>
-                  Look for the verified badge on trusted sellers.
-                </p>
-              </div>
-            </div>
-
-
-            <div class="verified-point">
-              <span>✓</span>
-
-              <div>
-                <h3>
-                  Secure Checkout
-                </h3>
-
-                <p>
-                  Payments are designed to be processed securely.
-                </p>
-              </div>
-            </div>
-
-
-            <div class="verified-point">
-              <span>✓</span>
-
-              <div>
-                <h3>
-                  Doorstep Delivery
-                </h3>
-
-                <p>
-                  Gifts can be delivered directly to the recipient.
-                </p>
-              </div>
-            </div>
-
+          <div class="motor-card">
+            <span>🚗</span>
+            <h3>Chauffeur Hire</h3>
+            <p>Travel comfortably with a private driver.</p>
+            <button class="btn btn-outline" onclick="carAction('chauffeur')">
+              Hire Chauffeur
+            </button>
           </div>
 
         </div>
@@ -723,104 +348,106 @@
     </section>
 
 
-    <!-- =====================================================
-         HOW IT WORKS
-         ===================================================== -->
-
-    <section id="how-it-works" class="section">
+    <!-- VERIFIED BUSINESSES -->
+    <section class="verified-section">
       <div class="container">
 
         <div class="section-heading">
-          <p class="eyebrow">
-            SIMPLE & EASY
-          </p>
-
-          <h2>
-            How GIFTIVA Works
-          </h2>
-
+          <p class="eyebrow">TRUSTED PARTNERS</p>
+          <h2>Giftiva Verified ✓</h2>
           <p>
-            Sending love across the world should be simple.
+            Shop confidently from businesses reviewed and verified by GIFTIVA.
           </p>
         </div>
 
+        <div class="verified-grid">
+
+          <div class="verified-card">
+            <span class="verified-icon">✓</span>
+            <h3>Verified Businesses</h3>
+            <p>
+              Vendors are reviewed before they can sell on GIFTIVA.
+            </p>
+          </div>
+
+          <div class="verified-card">
+            <span class="verified-icon">🔒</span>
+            <h3>Secure Checkout</h3>
+            <p>
+              Your payment is processed securely through trusted payment providers.
+            </p>
+          </div>
+
+          <div class="verified-card">
+            <span class="verified-icon">🚚</span>
+            <h3>Doorstep Delivery</h3>
+            <p>
+              Send beautiful gifts directly to your recipient's door.
+            </p>
+          </div>
+
+          <div class="verified-card">
+            <span class="verified-icon">🛡️</span>
+            <h3>Customer Protection</h3>
+            <p>
+              Our support team can investigate delivery and order problems.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+    <section class="how-section" id="how-it-works">
+      <div class="container">
+
+        <div class="section-heading">
+          <p class="eyebrow">SIMPLE & BEAUTIFUL</p>
+          <h2>How GIFTIVA Works</h2>
+        </div>
 
         <div class="steps-grid">
 
           <div class="step-card">
-            <span class="step-number">01</span>
-
-            <h3>
-              Choose Destination
-            </h3>
-
+            <div class="step-number">01</div>
+            <h3>Choose a Destination</h3>
             <p>
-              Select the country, state or region and city.
+              Select the country, region and city where you want the gift delivered.
             </p>
           </div>
 
-
           <div class="step-card">
-            <span class="step-number">02</span>
-
-            <h3>
-              Browse
-            </h3>
-
+            <div class="step-number">02</div>
+            <h3>Choose Your Gift</h3>
             <p>
-              Explore gifts, food, luxury products and services.
+              Browse products and services from verified local businesses.
             </p>
           </div>
 
-
           <div class="step-card">
-            <span class="step-number">03</span>
-
-            <h3>
-              Choose Your Gift
-            </h3>
-
+            <div class="step-number">03</div>
+            <h3>Enter Delivery Details</h3>
             <p>
-              Select the product or service you want to send.
+              Add your recipient's name, phone number and exact delivery address.
             </p>
           </div>
 
-
           <div class="step-card">
-            <span class="step-number">04</span>
-
-            <h3>
-              Enter Delivery Details
-            </h3>
-
+            <div class="step-number">04</div>
+            <h3>Pay Securely</h3>
             <p>
-              Add the recipient's information and delivery address.
+              Complete checkout securely and receive your order confirmation.
             </p>
           </div>
 
-
           <div class="step-card">
-            <span class="step-number">05</span>
-
-            <h3>
-              Pay Securely
-            </h3>
-
+            <div class="step-number">05</div>
+            <h3>Track Your Order</h3>
             <p>
-              Complete your order through secure payment processing.
-            </p>
-          </div>
-
-
-          <div class="step-card">
-            <span class="step-number">06</span>
-
-            <h3>
-              Track Delivery
-            </h3>
-
-            <p>
-              Follow your order until it reaches the recipient.
+              Follow your order from confirmation to doorstep delivery.
             </p>
           </div>
 
@@ -830,37 +457,23 @@
     </section>
 
 
-    <!-- =====================================================
-         BECOME A SELLER
-         ===================================================== -->
-
-    <section id="vendor" class="vendor-section">
+    <!-- VENDOR CTA -->
+    <section class="vendor-section" id="vendors">
       <div class="container">
 
-        <div class="vendor-box">
+        <div class="vendor-content">
 
           <div>
-            <p class="eyebrow">
-              GROW WITH GIFTIVA
-            </p>
-
-            <h2>
-              Become a GIFTIVA Seller
-            </h2>
-
+            <p class="eyebrow">FOR BUSINESSES</p>
+            <h2>Grow Your Business With GIFTIVA</h2>
             <p>
-              Reach customers around the world by joining our network
-              of trusted businesses and service providers.
+              Reach customers locally and internationally by joining our
+              worldwide marketplace.
             </p>
           </div>
 
-
-          <button
-            type="button"
-            class="btn btn-gold"
-            onclick="openVendorApplication()"
-          >
-            Apply to Become a Seller
+          <button class="btn btn-gold" onclick="openVendorModal()">
+            Apply as a Vendor
           </button>
 
         </div>
@@ -869,50 +482,30 @@
     </section>
 
 
-    <!-- =====================================================
-         TRACKING
-         ===================================================== -->
-
-    <section class="section tracking-section">
+    <!-- TRACK ORDER -->
+    <section class="tracking-section" id="tracking">
       <div class="container">
+
+        <div class="section-heading">
+          <p class="eyebrow">ORDER TRACKING</p>
+          <h2>Track Your Gift</h2>
+          <p>Enter your order number to check your delivery status.</p>
+        </div>
 
         <div class="tracking-box">
 
-          <div class="section-heading">
-            <p class="eyebrow">
-              ORDER TRACKING
-            </p>
+          <input
+            type="text"
+            id="orderNumber"
+            placeholder="Enter order number">
 
-            <h2>
-              Track Your GIFTIVA Order
-            </h2>
-
-            <p>
-              Enter your tracking number to see your order status.
-            </p>
-          </div>
-
-
-          <div class="tracking-form">
-
-            <input
-              type="text"
-              id="trackingNumber"
-              placeholder="Enter tracking number"
-              autocomplete="off"
-            >
-
-            <button
-              type="button"
-              class="btn btn-gold"
-              onclick="trackOrder()"
-            >
-              Track Order
-            </button>
-
-          </div>
+          <button class="btn btn-gold" onclick="trackOrder()">
+            Track Order
+          </button>
 
         </div>
+
+        <div id="tracking-result"></div>
 
       </div>
     </section>
@@ -920,168 +513,87 @@
   </main>
 
 
-  <!-- =====================================================
-       FOOTER
-       ===================================================== -->
-
+  <!-- FOOTER -->
   <footer class="site-footer">
+    <div class="container">
 
-    <div class="container footer-grid">
+      <div class="footer-grid">
 
-      <div>
-        <a href="#home" class="logo">
-          GIFTIVA
-        </a>
+        <div>
+          <a href="#" class="logo">GIFTIVA</a>
+          <p>
+            Send Love. Anywhere. 🌍🎁
+          </p>
+          <p>
+            A luxury worldwide marketplace for gifts, experiences,
+            cars and premium services.
+          </p>
+        </div>
 
-        <p>
-          Send Love. Anywhere. 🌍🎁
-        </p>
+        <div>
+          <h4>Marketplace</h4>
+          <a href="#marketplace">Gifts & Flowers</a>
+          <a href="#marketplace">Food & Cakes</a>
+          <a href="#marketplace">Jewelry & Luxury</a>
+          <a href="#marketplace">Experiences</a>
+        </div>
+
+        <div>
+          <h4>GIFTIVA Motors</h4>
+          <a href="#motors">Buy a Car</a>
+          <a href="#motors">Sell a Car</a>
+          <a href="#motors">Rent a Car</a>
+          <a href="#motors">Chauffeur Hire</a>
+        </div>
+
+        <div>
+          <h4>Support</h4>
+          <a href="#tracking">Track Order</a>
+          <a href="#">Help Center</a>
+          <a href="#">Delivery Information</a>
+          <a href="#">Complaints & Disputes</a>
+        </div>
+
       </div>
 
-
-      <div>
-        <h3>
-          Marketplace
-        </h3>
-
-        <a href="#marketplace">
-          Gifts & Flowers
-        </a>
-
-        <a href="#marketplace">
-          Food & Cakes
-        </a>
-
-        <a href="#marketplace">
-          Jewelry & Luxury
-        </a>
-
-        <a href="#motors">
-          GIFTIVA Motors
-        </a>
-      </div>
-
-
-      <div>
-        <h3>
-          GIFTIVA
-        </h3>
-
-        <a href="#how-it-works">
-          How It Works
-        </a>
-
-        <a href="#vendor">
-          Become a Seller
-        </a>
-
-        <a href="#home">
-          About Us
-        </a>
-      </div>
-
-
-      <div>
-        <h3>
-          Help
-        </h3>
-
-        <a href="#home">
-          Contact
-        </a>
-
-        <a href="#home">
-          Delivery
-        </a>
-
-        <a href="#home">
-          Returns
-        </a>
+      <div class="footer-bottom">
+        <p>© 2026 GIFTIVA. All rights reserved.</p>
+        <p>Send Love. Anywhere. 🌍🎁</p>
       </div>
 
     </div>
-
-
-    <div class="container footer-bottom">
-
-      <p>
-        © 2026 GIFTIVA. All rights reserved.
-      </p>
-
-      <p>
-        Send Love. Anywhere. 🌍🎁
-      </p>
-
-    </div>
-
   </footer>
 
 
-  <!-- =====================================================
-       LOGIN MODAL
-       ===================================================== -->
-
-  <div
-    id="loginModal"
-    class="modal"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="loginTitle"
-  >
+  <!-- LOGIN MODAL -->
+  <div class="modal" id="loginModal">
 
     <div class="modal-content">
 
-      <button
-        type="button"
-        class="modal-close"
-        onclick="closeModal('loginModal')"
-        aria-label="Close"
-      >
-        ×
-      </button>
+      <button class="modal-close" onclick="closeLogin()">×</button>
 
-      <p class="eyebrow">
-        WELCOME BACK
-      </p>
+      <p class="eyebrow">WELCOME BACK</p>
+      <h2>Login to GIFTIVA</h2>
 
-      <h2 id="loginTitle">
-        Login to GIFTIVA
-      </h2>
-
-      <form onsubmit="event.preventDefault(); demoSubmit('login');">
+      <form onsubmit="demoSubmit(event)">
 
         <div class="form-group">
-          <label for="loginEmail">
-            Email
-          </label>
-
+          <label>Email</label>
           <input
             type="email"
-            id="loginEmail"
             placeholder="Enter your email"
-            required
-          >
+            required>
         </div>
-
 
         <div class="form-group">
-          <label for="loginPassword">
-            Password
-          </label>
-
+          <label>Password</label>
           <input
             type="password"
-            id="loginPassword"
             placeholder="Enter your password"
-            required
-          >
+            required>
         </div>
 
-
-        <button
-          type="submit"
-          class="btn btn-gold full-width"
-        >
+        <button class="btn btn-gold full-width" type="submit">
           Login
         </button>
 
@@ -1092,85 +604,43 @@
   </div>
 
 
-  <!-- =====================================================
-       SIGN UP MODAL
-       ===================================================== -->
-
-  <div
-    id="signupModal"
-    class="modal"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="signupTitle"
-  >
+  <!-- SIGNUP MODAL -->
+  <div class="modal" id="signupModal">
 
     <div class="modal-content">
 
-      <button
-        type="button"
-        class="modal-close"
-        onclick="closeModal('signupModal')"
-        aria-label="Close"
-      >
-        ×
-      </button>
+      <button class="modal-close" onclick="closeSignup()">×</button>
 
-      <p class="eyebrow">
-        JOIN GIFTIVA
-      </p>
+      <p class="eyebrow">JOIN GIFTIVA</p>
+      <h2>Create Your Account</h2>
 
-      <h2 id="signupTitle">
-        Create Your Account
-      </h2>
-
-      <form onsubmit="event.preventDefault(); demoSubmit('signup');">
+      <form onsubmit="demoSubmit(event)">
 
         <div class="form-group">
-          <label for="signupName">
-            Full Name
-          </label>
-
+          <label>Full Name</label>
           <input
             type="text"
-            id="signupName"
             placeholder="Enter your full name"
-            required
-          >
+            required>
         </div>
 
-
         <div class="form-group">
-          <label for="signupEmail">
-            Email
-          </label>
-
+          <label>Email</label>
           <input
             type="email"
-            id="signupEmail"
             placeholder="Enter your email"
-            required
-          >
+            required>
         </div>
-
 
         <div class="form-group">
-          <label for="signupPassword">
-            Password
-          </label>
-
+          <label>Password</label>
           <input
             type="password"
-            id="signupPassword"
             placeholder="Create a password"
-            required
-          >
+            required>
         </div>
 
-
-        <button
-          type="submit"
-          class="btn btn-gold full-width"
-        >
+        <button class="btn btn-gold full-width" type="submit">
           Create Account
         </button>
 
@@ -1181,155 +651,74 @@
   </div>
 
 
-  <!-- =====================================================
-       VENDOR APPLICATION MODAL
-       ===================================================== -->
-
-  <div
-    id="vendorModal"
-    class="modal"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="vendorTitle"
-  >
+  <!-- VENDOR MODAL -->
+  <div class="modal" id="vendorModal">
 
     <div class="modal-content">
 
-      <button
-        type="button"
-        class="modal-close"
-        onclick="closeModal('vendorModal')"
-        aria-label="Close"
-      >
-        ×
-      </button>
+      <button class="modal-close" onclick="closeVendorModal()">×</button>
 
-      <p class="eyebrow">
-        GIFTIVA PARTNERS
-      </p>
+      <p class="eyebrow">GIFTIVA VERIFIED</p>
+      <h2>Become a Vendor</h2>
 
-      <h2 id="vendorTitle">
-        Become a Seller
-      </h2>
-
-      <p>
-        Submit your business information for GIFTIVA verification.
-      </p>
-
-
-      <form onsubmit="event.preventDefault(); demoSubmit('vendor');">
+      <form onsubmit="demoSubmit(event)">
 
         <div class="form-group">
-          <label for="businessName">
-            Business Name
-          </label>
-
+          <label>Business Name</label>
           <input
             type="text"
-            id="businessName"
-            placeholder="Business name"
-            required
-          >
+            placeholder="Your business name"
+            required>
         </div>
 
-
         <div class="form-group">
-          <label for="ownerName">
-            Owner / Contact Name
-          </label>
-
+          <label>Owner Name</label>
           <input
             type="text"
-            id="ownerName"
-            placeholder="Full name"
-            required
-          >
+            placeholder="Business owner name"
+            required>
         </div>
 
-
         <div class="form-group">
-          <label for="vendorPhone">
-            Phone Number
-          </label>
-
-          <input
-            type="tel"
-            id="vendorPhone"
-            placeholder="Phone number"
-            required
-          >
-        </div>
-
-
-        <div class="form-group">
-          <label for="vendorEmail">
-            Email
-          </label>
-
+          <label>Business Email</label>
           <input
             type="email"
-            id="vendorEmail"
             placeholder="Business email"
-            required
-          >
+            required>
         </div>
 
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input
+            type="tel"
+            placeholder="Business phone number"
+            required>
+        </div>
 
         <div class="form-group">
-          <label for="businessType">
-            Business Type
-          </label>
-
-          <select id="businessType" required>
-            <option value="">
-              Select business type
-            </option>
-
-            <option value="Gifts & Flowers">
-              Gifts & Flowers
-            </option>
-
-            <option value="Food & Cakes">
-              Food & Cakes
-            </option>
-
-            <option value="Jewelry & Luxury">
-              Jewelry & Luxury
-            </option>
-
-            <option value="Cars">
-              Cars / Motors
-            </option>
-
-            <option value="Services">
-              Services
-            </option>
-
-            <option value="Experiences">
-              Experiences
-            </option>
+          <label>Business Type</label>
+          <select required>
+            <option value="">Select business type</option>
+            <option>Gifts & Flowers</option>
+            <option>Food & Cakes</option>
+            <option>Jewelry & Luxury</option>
+            <option>Experiences</option>
+            <option>Cars</option>
+            <option>Car Rentals</option>
+            <option>Chauffeur Services</option>
+            <option>Other Services</option>
           </select>
         </div>
 
-
         <div class="form-group">
-          <label for="businessAddress">
-            Business Address
-          </label>
-
+          <label>Business Address</label>
           <textarea
-            id="businessAddress"
             placeholder="Enter your business address"
-            rows="4"
-            required
-          ></textarea>
+            rows="3"
+            required></textarea>
         </div>
 
-
-        <button
-          type="submit"
-          class="btn btn-gold full-width"
-        >
+        <button class="btn btn-gold full-width" type="submit">
           Submit Application
         </button>
 
@@ -1340,10 +729,9 @@
   </div>
 
 
-  <!-- =====================================================
-       JAVASCRIPT
-       ===================================================== -->
-
+  <!-- IMPORTANT:
+       products.js MUST LOAD BEFORE script.js -->
+  <script src="products.js"></script>
   <script src="script.js"></script>
 
 </body>
