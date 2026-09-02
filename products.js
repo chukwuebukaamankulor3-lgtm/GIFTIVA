@@ -1,1210 +1,995 @@
 // ======================================================
-// GIFTIVA — MAIN JAVASCRIPT
+// GIFTIVA — PRODUCT CATALOG
+// Send Love. Anywhere. 🌍🎁
 // ======================================================
 
-// ------------------------------------------------------
-// 1. COUNTRIES
-// ------------------------------------------------------
+const giftivaProducts = [
 
-const giftivaCountries = [
-  "Nigeria",
-  "United Kingdom",
-  "United States",
-  "Canada",
-  "Australia",
-  "Italy",
-  "France",
-  "Germany",
-  "Spain",
-  "Portugal",
-  "Netherlands",
-  "Belgium",
-  "Switzerland",
-  "Austria",
-  "Ireland",
-  "Norway",
-  "Sweden",
-  "Denmark",
-  "Finland",
-  "Poland",
-  "Greece",
-  "United Arab Emirates",
-  "Saudi Arabia",
-  "Qatar",
-  "South Africa",
-  "Ghana",
-  "Kenya",
-  "Brazil",
-  "Mexico",
-  "Japan",
-  "China",
-  "India",
-  "Singapore",
-  "Malaysia",
-  "New Zealand"
+  // ====================================================
+  // GIFTS & FLOWERS
+  // ====================================================
+
+  {
+    id: "GFT001",
+    name: "Forever Rose Box",
+    category: "Gifts & Flowers",
+    description: "Elegant preserved roses beautifully arranged in a luxury gift box.",
+    price: 35000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Abia",
+    city: "Umuahia",
+    emoji: "🌹",
+    customizable: false
+  },
+
+  {
+    id: "GFT002",
+    name: "Premium Rose Bouquet",
+    category: "Gifts & Flowers",
+    description: "A premium bouquet of beautiful roses for birthdays, anniversaries and special occasions.",
+    price: 28000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Lagos",
+    city: "Lagos",
+    emoji: "💐",
+    customizable: false
+  },
+
+  {
+    id: "GFT003",
+    name: "Luxury Teddy Bear",
+    category: "Gifts & Flowers",
+    description: "Soft premium teddy bear perfect for romantic surprises and special celebrations.",
+    price: 22000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Abia",
+    city: "Umuahia",
+    emoji: "🧸",
+    customizable: false
+  },
+
+  {
+    id: "GFT004",
+    name: "Luxury Love Hamper",
+    category: "Gifts & Flowers",
+    description: "A luxury hamper filled with carefully selected romantic treats.",
+    price: 48000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Lagos",
+    city: "Lekki",
+    emoji: "🎁",
+    customizable: false
+  },
+
+  {
+    id: "GFT005",
+    name: "Birthday Surprise Box",
+    category: "Gifts & Flowers",
+    description: "A beautiful birthday surprise box that can be personalized for someone special.",
+    price: 55000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Rivers",
+    city: "Port Harcourt",
+    emoji: "🎂",
+    customizable: true
+  },
+
+  {
+    id: "GFT006",
+    name: "Chocolate Gift Box",
+    category: "Gifts & Flowers",
+    description: "Premium chocolate selection presented in an elegant gift box.",
+    price: 28000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Abia",
+    city: "Umuahia",
+    emoji: "🍫",
+    customizable: false
+  },
+
+  {
+    id: "GFT007",
+    name: "Romantic Balloon Surprise",
+    category: "Gifts & Flowers",
+    description: "Beautiful balloons arranged for birthdays, anniversaries and romantic surprises.",
+    price: 30000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Lagos",
+    city: "Lagos",
+    emoji: "🎈",
+    customizable: true
+  },
+
+  {
+    id: "GFT008",
+    name: "Premium Celebration Hamper",
+    category: "Gifts & Flowers",
+    description: "A premium celebration hamper designed for memorable occasions.",
+    price: 65000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Abuja",
+    city: "Abuja",
+    emoji: "🧺",
+    customizable: false
+  },
+
+
+  // ====================================================
+  // FOOD & CAKES
+  // ====================================================
+
+  {
+    id: "FOOD001",
+    name: "Classic Celebration Cake",
+    category: "Food & Cakes",
+    description: "Beautiful celebration cake suitable for birthdays and special occasions.",
+    price: 22000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Abia",
+    city: "Aba",
+    emoji: "🎂",
+    customizable: true
+  },
+
+  {
+    id: "FOOD002",
+    name: "Luxury Birthday Cake",
+    category: "Food & Cakes",
+    description: "Premium decorated birthday cake with personalized message options.",
+    price: 35000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Abia",
+    city: "Umuahia",
+    emoji: "🎂",
+    customizable: true
+  },
+
+  {
+    id: "FOOD003",
+    name: "Chocolate Cake",
+    category: "Food & Cakes",
+    description: "Rich chocolate cake prepared for unforgettable celebrations.",
+    price: 30000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Lagos",
+    city: "Lagos",
+    emoji: "🍫",
+    customizable: true
+  },
+
+  {
+    id: "FOOD004",
+    name: "Cupcake Celebration Box",
+    category: "Food & Cakes",
+    description: "A box of delicious celebration cupcakes beautifully presented.",
+    price: 18000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Abia",
+    city: "Umuahia",
+    emoji: "🧁",
+    customizable: true
+  },
+
+  {
+    id: "FOOD005",
+    name: "Margherita Pizza",
+    category: "Food & Cakes",
+    description: "Freshly prepared classic Margherita pizza with tomato, cheese and herbs.",
+    price: 15000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Abia",
+    city: "Umuahia",
+    emoji: "🍕",
+    customizable: false
+  },
+
+  {
+    id: "FOOD006",
+    name: "Pepperoni Pizza",
+    category: "Food & Cakes",
+    description: "Classic pizza topped with delicious pepperoni and melted cheese.",
+    price: 18000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Lagos",
+    city: "Lagos",
+    emoji: "🍕",
+    customizable: false
+  },
+
+  {
+    id: "FOOD007",
+    name: "Chicken BBQ Pizza",
+    category: "Food & Cakes",
+    description: "Loaded pizza topped with seasoned chicken and BBQ flavors.",
+    price: 20000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Rivers",
+    city: "Port Harcourt",
+    emoji: "🍕",
+    customizable: false
+  },
+
+  {
+    id: "FOOD008",
+    name: "Supreme Family Pizza",
+    category: "Food & Cakes",
+    description: "Large family pizza packed with premium toppings.",
+    price: 28000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Lagos",
+    city: "Lekki",
+    emoji: "🍕",
+    customizable: false
+  },
+
+  {
+    id: "FOOD009",
+    name: "Breakfast Gift Box",
+    category: "Food & Cakes",
+    description: "A delicious breakfast package perfect for surprising someone in the morning.",
+    price: 25000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Abia",
+    city: "Umuahia",
+    emoji: "🥐",
+    customizable: false
+  },
+
+  {
+    id: "FOOD010",
+    name: "Premium Food Tray",
+    category: "Food & Cakes",
+    description: "A premium food tray prepared for celebrations and special occasions.",
+    price: 35000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Lagos",
+    city: "Lagos",
+    emoji: "🍱",
+    customizable: false
+  },
+
+  {
+    id: "FOOD011",
+    name: "Luxury Chicken Dinner",
+    category: "Food & Cakes",
+    description: "Premium chicken meal prepared and presented for a special occasion.",
+    price: 28000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Abia",
+    city: "Umuahia",
+    emoji: "🍗",
+    customizable: false
+  },
+
+  {
+    id: "FOOD012",
+    name: "Burger Celebration Meal",
+    category: "Food & Cakes",
+    description: "Delicious premium burger meal suitable for gifting and celebrations.",
+    price: 18000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Lagos",
+    city: "Lagos",
+    emoji: "🍔",
+    customizable: false
+  },
+
+
+  // ====================================================
+  // PERSONALIZED GIFTS
+  // ====================================================
+
+  {
+    id: "CUS001",
+    name: "Customized Couple Photo Frame",
+    category: "Personalized Gifts",
+    description: "Personalized photo frame featuring your favorite couple memories.",
+    price: 25000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Abia",
+    city: "Umuahia",
+    emoji: "🖼️",
+    customizable: true
+  },
+
+  {
+    id: "CUS002",
+    name: "Luxury Acrylic Photo Frame",
+    category: "Personalized Gifts",
+    description: "Premium acrylic frame customized with your favorite photo.",
+    price: 30000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Lagos",
+    city: "Lagos",
+    emoji: "🖼️",
+    customizable: true
+  },
+
+  {
+    id: "CUS003",
+    name: "LED Photo Frame",
+    category: "Personalized Gifts",
+    description: "Beautiful illuminated photo frame for a luxury room or special gift.",
+    price: 45000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Abia",
+    city: "Umuahia",
+    emoji: "✨",
+    customizable: true
+  },
+
+  {
+    id: "CUS004",
+    name: "Anniversary Photo Frame",
+    category: "Personalized Gifts",
+    description: "Elegant anniversary frame customized with names, dates and photos.",
+    price: 28000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Rivers",
+    city: "Port Harcourt",
+    emoji: "💑",
+    customizable: true
+  },
+
+  {
+    id: "CUS005",
+    name: "Family Collage Frame",
+    category: "Personalized Gifts",
+    description: "Large personalized collage frame for beautiful family memories.",
+    price: 40000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Lagos",
+    city: "Lekki",
+    emoji: "👨‍👩‍👧‍👦",
+    customizable: true
+  },
+
+  {
+    id: "CUS006",
+    name: "Customized Couple Mug",
+    category: "Personalized Gifts",
+    description: "Personalized couple mug with names, photos or a special message.",
+    price: 12000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Abia",
+    city: "Umuahia",
+    emoji: "☕",
+    customizable: true
+  },
+
+  {
+    id: "CUS007",
+    name: "Personalized Magic Mug",
+    category: "Personalized Gifts",
+    description: "Magic mug that reveals a personalized image when filled with a hot drink.",
+    price: 15000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Lagos",
+    city: "Lagos",
+    emoji: "☕",
+    customizable: true
+  },
+
+  {
+    id: "CUS008",
+    name: "Customized Tumbler",
+    category: "Personalized Gifts",
+    description: "Stylish personalized tumbler with your name, photo or message.",
+    price: 18000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Abia",
+    city: "Umuahia",
+    emoji: "🥤",
+    customizable: true
+  },
+
+  {
+    id: "CUS009",
+    name: "Customized Water Bottle",
+    category: "Personalized Gifts",
+    description: "Personalized reusable water bottle with custom name or design.",
+    price: 15000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Rivers",
+    city: "Port Harcourt",
+    emoji: "🍶",
+    customizable: true
+  },
+
+  {
+    id: "CUS010",
+    name: "Personalized Key Holder",
+    category: "Personalized Gifts",
+    description: "Custom key holder personalized with a name, photo or message.",
+    price: 10000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Abia",
+    city: "Umuahia",
+    emoji: "🔑",
+    customizable: true
+  },
+
+  {
+    id: "CUS011",
+    name: "Customized Phone Case",
+    category: "Personalized Gifts",
+    description: "Phone case customized with your favorite photo, name or design.",
+    price: 12000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Lagos",
+    city: "Lagos",
+    emoji: "📱",
+    customizable: true
+  },
+
+  {
+    id: "CUS012",
+    name: "Personalized Pillow",
+    category: "Personalized Gifts",
+    description: "Soft personalized pillow printed with a photo or special message.",
+    price: 18000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Abia",
+    city: "Umuahia",
+    emoji: "🛏️",
+    customizable: true
+  },
+
+
+  // ====================================================
+  // CLOTHING
+  // ====================================================
+
+  {
+    id: "CLO001",
+    name: "Customized Couple T-Shirt",
+    category: "Clothing",
+    description: "Matching couple T-shirts personalized with names, photos or messages.",
+    price: 18000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Abia",
+    city: "Umuahia",
+    emoji: "👕",
+    customizable: true
+  },
+
+  {
+    id: "CLO002",
+    name: "Customized Hoodie",
+    category: "Clothing",
+    description: "Premium hoodie customized with your preferred text, photo or design.",
+    price: 30000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Lagos",
+    city: "Lagos",
+    emoji: "🧥",
+    customizable: true
+  },
+
+  {
+    id: "CLO003",
+    name: "Personalized T-Shirt",
+    category: "Clothing",
+    description: "Custom T-shirt designed with your own name, photo or artwork.",
+    price: 12000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Abia",
+    city: "Aba",
+    emoji: "👕",
+    customizable: true
+  },
+
+  {
+    id: "CLO004",
+    name: "Customized Cap",
+    category: "Clothing",
+    description: "Stylish personalized cap with custom name, initials or logo.",
+    price: 10000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Lagos",
+    city: "Lagos",
+    emoji: "🧢",
+    customizable: true
+  },
+
+  {
+    id: "CLO005",
+    name: "Couple Hoodie Set",
+    category: "Clothing",
+    description: "Matching premium hoodies for couples with personalized designs.",
+    price: 55000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Rivers",
+    city: "Port Harcourt",
+    emoji: "👫",
+    customizable: true
+  },
+
+  {
+    id: "CLO006",
+    name: "Customized Family T-Shirt Set",
+    category: "Clothing",
+    description: "Matching personalized T-shirts for families and group celebrations.",
+    price: 65000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Lagos",
+    city: "Lekki",
+    emoji: "👨‍👩‍👧‍👦",
+    customizable: true
+  },
+
+
+  // ====================================================
+  // JEWELRY & LUXURY
+  // ====================================================
+
+  {
+    id: "LUX001",
+    name: "Elegant Gold Necklace",
+    category: "Jewelry & Luxury",
+    description: "Elegant luxury necklace suitable for romantic and special occasions.",
+    price: 125000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Lagos",
+    city: "Victoria Island",
+    emoji: "📿",
+    customizable: false
+  },
+
+  {
+    id: "LUX002",
+    name: "Luxury Gold Watch",
+    category: "Jewelry & Luxury",
+    description: "Premium luxury watch with an elegant design.",
+    price: 180000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Lagos",
+    city: "Lagos",
+    emoji: "⌚",
+    customizable: false
+  },
+
+  {
+    id: "LUX003",
+    name: "Luxury Bracelet",
+    category: "Jewelry & Luxury",
+    description: "Elegant premium bracelet designed for special gifting.",
+    price: 85000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Abia",
+    city: "Umuahia",
+    emoji: "📿",
+    customizable: false
+  },
+
+  {
+    id: "LUX004",
+    name: "Luxury Perfume Gift Set",
+    category: "Jewelry & Luxury",
+    description: "Premium perfume gift set presented in elegant luxury packaging.",
+    price: 95000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Lagos",
+    city: "Lekki",
+    emoji: "🌹",
+    customizable: false
+  },
+
+  {
+    id: "LUX005",
+    name: "Luxury Handbag",
+    category: "Jewelry & Luxury",
+    description: "Elegant luxury handbag suitable for premium gifting.",
+    price: 150000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Lagos",
+    city: "Lagos",
+    emoji: "👜",
+    customizable: false
+  },
+
+  {
+    id: "LUX006",
+    name: "Personalized Wallet",
+    category: "Jewelry & Luxury",
+    description: "Premium wallet personalized with initials or a special name.",
+    price: 45000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Abia",
+    city: "Umuahia",
+    emoji: "👛",
+    customizable: true
+  },
+
+  {
+    id: "LUX007",
+    name: "Luxury Sunglasses",
+    category: "Jewelry & Luxury",
+    description: "Stylish premium sunglasses for a sophisticated look.",
+    price: 75000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Lagos",
+    city: "Lagos",
+    emoji: "🕶️",
+    customizable: false
+  },
+
+  {
+    id: "LUX008",
+    name: "Luxury Ring",
+    category: "Jewelry & Luxury",
+    description: "Elegant premium ring suitable for anniversaries and special occasions.",
+    price: 150000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Lagos",
+    city: "Victoria Island",
+    emoji: "💍",
+    customizable: false
+  },
+
+  {
+    id: "LUX009",
+    name: "Luxury Earrings",
+    category: "Jewelry & Luxury",
+    description: "Beautiful premium earrings presented in luxury packaging.",
+    price: 90000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Abia",
+    city: "Umuahia",
+    emoji: "💎",
+    customizable: false
+  },
+
+
+  // ====================================================
+  // EXPERIENCES
+  // ====================================================
+
+  {
+    id: "EXP001",
+    name: "Romantic Dinner Experience",
+    category: "Experiences",
+    description: "A premium romantic dinner experience for two.",
+    price: 95000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Lagos",
+    city: "Lagos Island",
+    emoji: "🍽️",
+    customizable: false
+  },
+
+  {
+    id: "EXP002",
+    name: "Couples Spa Experience",
+    category: "Experiences",
+    description: "Relaxing luxury spa experience designed for couples.",
+    price: 85000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Lagos",
+    city: "Lekki",
+    emoji: "💆",
+    customizable: false
+  },
+
+  {
+    id: "EXP003",
+    name: "Luxury Hotel Stay",
+    category: "Experiences",
+    description: "Premium hotel stay for a memorable romantic getaway.",
+    price: 180000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Lagos",
+    city: "Victoria Island",
+    emoji: "🏨",
+    customizable: false
+  },
+
+  {
+    id: "EXP004",
+    name: "Birthday Surprise Experience",
+    category: "Experiences",
+    description: "A complete birthday surprise experience planned for someone special.",
+    price: 120000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Abuja",
+    city: "Abuja",
+    emoji: "🎉",
+    customizable: true
+  },
+
+
+  // ====================================================
+  // GIFTIVA MOTORS
+  // ====================================================
+
+  {
+    id: "MOT001",
+    name: "Luxury Car Listing",
+    category: "Cars",
+    description: "Premium luxury vehicle available for purchase through GIFTIVA Motors.",
+    price: 25000000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Lagos",
+    city: "Lagos",
+    emoji: "🚘",
+    customizable: false
+  },
+
+  {
+    id: "MOT002",
+    name: "Premium SUV",
+    category: "Cars",
+    description: "Luxury SUV available from a verified GIFTIVA Motors seller.",
+    price: 45000000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Lagos",
+    city: "Lekki",
+    emoji: "🚙",
+    customizable: false
+  },
+
+  {
+    id: "MOT003",
+    name: "Luxury Car Rental",
+    category: "Car Rentals",
+    description: "Premium vehicle rental for events, business and special occasions.",
+    price: 150000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Lagos",
+    city: "Lagos",
+    emoji: "🚗",
+    customizable: false
+  },
+
+  {
+    id: "MOT004",
+    name: "Professional Chauffeur Service",
+    category: "Chauffeur",
+    description: "Professional chauffeur service for airport transfers, events and special occasions.",
+    price: 100000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Lagos",
+    city: "Lagos",
+    emoji: "🚘",
+    customizable: false
+  },
+
+  {
+    id: "MOT005",
+    name: "Premium Car Key Holder",
+    category: "Services",
+    description: "Premium personalized key holder designed for luxury car owners.",
+    price: 18000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Abia",
+    city: "Umuahia",
+    emoji: "🔑",
+    customizable: true
+  },
+
+  {
+    id: "MOT006",
+    name: "Personalized Car Key Case",
+    category: "Services",
+    description: "Luxury car key case personalized with initials or name.",
+    price: 25000,
+    currency: "NGN",
+    country: "Nigeria",
+    region: "Lagos",
+    city: "Lagos",
+    emoji: "🔑",
+    customizable: true
+  },
+
+
+  // ====================================================
+  // INTERNATIONAL PRODUCTS
+  // ====================================================
+
+  {
+    id: "INT001",
+    name: "Premium Flower Bouquet",
+    category: "Gifts & Flowers",
+    description: "Premium flower bouquet prepared for worldwide gifting.",
+    price: 65,
+    currency: "GBP",
+    country: "United Kingdom",
+    region: "England",
+    city: "London",
+    emoji: "💐",
+    customizable: false
+  },
+
+  {
+    id: "INT002",
+    name: "Luxury Chocolate Gift Box",
+    category: "Gifts & Flowers",
+    description: "Luxury chocolate gift box perfect for birthdays and romantic occasions.",
+    price: 45,
+    currency: "GBP",
+    country: "United Kingdom",
+    region: "England",
+    city: "Manchester",
+    emoji: "🍫",
+    customizable: false
+  },
+
+  {
+    id: "INT003",
+    name: "Luxury Jewelry Gift",
+    category: "Jewelry & Luxury",
+    description: "Premium jewelry gift available through a verified international vendor.",
+    price: 350,
+    currency: "USD",
+    country: "United States",
+    region: "New York",
+    city: "New York City",
+    emoji: "💎",
+    customizable: false
+  },
+
+  {
+    id: "INT004",
+    name: "Luxury Celebration Hamper",
+    category: "Gifts & Flowers",
+    description: "Premium celebration hamper prepared for delivery in Canada.",
+    price: 120,
+    currency: "CAD",
+    country: "Canada",
+    region: "Ontario",
+    city: "Toronto",
+    emoji: "🎁",
+    customizable: false
+  },
+
+  {
+    id: "INT005",
+    name: "Premium Celebration Cake",
+    category: "Food & Cakes",
+    description: "Premium celebration cake available for selected delivery locations in Australia.",
+    price: 95,
+    currency: "AUD",
+    country: "Australia",
+    region: "New South Wales",
+    city: "Sydney",
+    emoji: "🎂",
+    customizable: true
+  },
+
+  {
+    id: "INT006",
+    name: "Luxury Rose Arrangement",
+    category: "Gifts & Flowers",
+    description: "Elegant luxury rose arrangement for romantic occasions.",
+    price: 90,
+    currency: "GBP",
+    country: "United Kingdom",
+    region: "England",
+    city: "London",
+    emoji: "🌹",
+    customizable: false
+  },
+
+  {
+    id: "INT007",
+    name: "Premium Watch Gift",
+    category: "Jewelry & Luxury",
+    description: "Luxury watch presented as an elegant international gift.",
+    price: 500,
+    currency: "USD",
+    country: "United States",
+    region: "California",
+    city: "Los Angeles",
+    emoji: "⌚",
+    customizable: false
+  }
+
 ];
 
 
-// ------------------------------------------------------
-// 2. COUNTRY FLAGS
-// ------------------------------------------------------
+// ======================================================
+// GIFTIVA PRODUCT FUNCTIONS
+// ======================================================
 
-const countryFlags = {
-  "Nigeria": "🇳🇬",
-  "United Kingdom": "🇬🇧",
-  "United States": "🇺🇸",
-  "Canada": "🇨🇦",
-  "Australia": "🇦🇺",
-  "Italy": "🇮🇹",
-  "France": "🇫🇷",
-  "Germany": "🇩🇪",
-  "Spain": "🇪🇸",
-  "Portugal": "🇵🇹",
-  "Netherlands": "🇳🇱",
-  "Belgium": "🇧🇪",
-  "Switzerland": "🇨🇭",
-  "Austria": "🇦🇹",
-  "Ireland": "🇮🇪",
-  "Norway": "🇳🇴",
-  "Sweden": "🇸🇪",
-  "Denmark": "🇩🇰",
-  "Finland": "🇫🇮",
-  "Poland": "🇵🇱",
-  "Greece": "🇬🇷",
-  "United Arab Emirates": "🇦🇪",
-  "Saudi Arabia": "🇸🇦",
-  "Qatar": "🇶🇦",
-  "South Africa": "🇿🇦",
-  "Ghana": "🇬🇭",
-  "Kenya": "🇰🇪",
-  "Brazil": "🇧🇷",
-  "Mexico": "🇲🇽",
-  "Japan": "🇯🇵",
-  "China": "🇨🇳",
-  "India": "🇮🇳",
-  "Singapore": "🇸🇬",
-  "Malaysia": "🇲🇾",
-  "New Zealand": "🇳🇿"
-};
-
-
-// ------------------------------------------------------
-// 3. GET ELEMENTS
-// ------------------------------------------------------
-
-const countrySelect = document.getElementById("country");
-const regionSelect = document.getElementById("region");
-const citySelect = document.getElementById("city");
-const categorySelect = document.getElementById("category");
-const searchBtn = document.getElementById("searchBtn");
-const marketplaceResults = document.getElementById("marketplace-results");
-
-
-// ------------------------------------------------------
-// 4. POPULATE COUNTRIES
-// ------------------------------------------------------
-
-function populateCountries() {
-
-  if (!countrySelect) return;
-
-  countrySelect.innerHTML =
-    '<option value="">Select country</option>';
-
-  giftivaCountries.forEach(country => {
-
-    const option = document.createElement("option");
-
-    option.value = country;
-
-    option.textContent =
-      `${countryFlags[country] || "🌍"} ${country}`;
-
-    countrySelect.appendChild(option);
-
-  });
+function getGiftivaProducts() {
+  return [...giftivaProducts];
 }
 
 
-// ------------------------------------------------------
-// 5. LOCATION API
-// ------------------------------------------------------
-
-async function loadRegions(country) {
-
-  if (!regionSelect) return;
-
-  regionSelect.innerHTML =
-    '<option value="">Loading states / regions...</option>';
-
-  regionSelect.disabled = true;
-
-  if (citySelect) {
-    citySelect.innerHTML =
-      '<option value="">Select city</option>';
-
-    citySelect.disabled = true;
-  }
-
-  try {
-
-    const response = await fetch(
-      `https://countriesnow.space/api/v0.1/countries/states/q?country=${encodeURIComponent(country)}`
-    );
-
-    const result = await response.json();
-
-    let states = [];
-
-    if (result && result.data) {
-
-      if (Array.isArray(result.data.states)) {
-        states = result.data.states;
-      }
-
-      if (Array.isArray(result.data)) {
-        states = result.data;
-      }
-
-    }
-
-    regionSelect.innerHTML =
-      '<option value="">Select state / region</option>';
-
-    states.forEach(state => {
-
-      const stateName =
-        typeof state === "string"
-          ? state
-          : state.name;
-
-      if (!stateName) return;
-
-      const option = document.createElement("option");
-
-      option.value = stateName;
-      option.textContent = stateName;
-
-      regionSelect.appendChild(option);
-
-    });
-
-    regionSelect.disabled = states.length === 0;
-
-    if (states.length === 0) {
-
-      regionSelect.innerHTML =
-        '<option value="">No regions available</option>';
-
-    }
-
-  } catch (error) {
-
-    console.error("Region loading error:", error);
-
-    regionSelect.innerHTML =
-      '<option value="">Unable to load regions</option>';
-
-    regionSelect.disabled = true;
-
-  }
-
+function getProductById(productId) {
+  return giftivaProducts.find(
+    product => product.id === productId
+  );
 }
 
 
-// ------------------------------------------------------
-// 6. LOAD CITIES
-// ------------------------------------------------------
+function getProductsByCategory(category) {
 
-async function loadCities(country, region) {
-
-  if (!citySelect) return;
-
-  citySelect.innerHTML =
-    '<option value="">Loading cities...</option>';
-
-  citySelect.disabled = true;
-
-  try {
-
-    const response = await fetch(
-      "https://countriesnow.space/api/v0.1/countries/state/cities",
-      {
-        method: "POST",
-
-        headers: {
-          "Content-Type": "application/json"
-        },
-
-        body: JSON.stringify({
-          country: country,
-          state: region
-        })
-      }
-    );
-
-    const result = await response.json();
-
-    let cities = [];
-
-    if (result && result.data) {
-
-      if (Array.isArray(result.data)) {
-        cities = result.data;
-      }
-
-      if (Array.isArray(result.data.cities)) {
-        cities = result.data.cities;
-      }
-
-      if (Array.isArray(result.data.states)) {
-        cities = result.data.states;
-      }
-
-    }
-
-    cities = cities
-      .map(city => {
-
-        if (typeof city === "string") {
-          return city;
-        }
-
-        return city.name || city.city || "";
-
-      })
-      .filter(Boolean);
-
-
-    // Remove duplicates
-    cities = [...new Set(cities)];
-
-    cities.sort((a, b) =>
-      a.localeCompare(b)
-    );
-
-
-    citySelect.innerHTML =
-      '<option value="">Select city</option>';
-
-
-    cities.forEach(city => {
-
-      const option =
-        document.createElement("option");
-
-      option.value = city;
-      option.textContent = city;
-
-      citySelect.appendChild(option);
-
-    });
-
-
-    citySelect.disabled =
-      cities.length === 0;
-
-
-    if (cities.length === 0) {
-
-      citySelect.innerHTML =
-        '<option value="">No cities available</option>';
-
-    }
-
-  } catch (error) {
-
-    console.error("City loading error:", error);
-
-    citySelect.innerHTML =
-      '<option value="">Unable to load cities</option>';
-
-    citySelect.disabled = true;
-
+  if (!category) {
+    return getGiftivaProducts();
   }
 
-}
-
-
-// ------------------------------------------------------
-// 7. COUNTRY CHANGE
-// ------------------------------------------------------
-
-if (countrySelect) {
-
-  countrySelect.addEventListener(
-    "change",
-    async function () {
-
-      const country =
-        this.value.trim();
-
-      if (!country) {
-
-        regionSelect.innerHTML =
-          '<option value="">Select state / region</option>';
-
-        regionSelect.disabled = true;
-
-        citySelect.innerHTML =
-          '<option value="">Select city</option>';
-
-        citySelect.disabled = true;
-
-        return;
-      }
-
-      await loadRegions(country);
-
-    }
+  return giftivaProducts.filter(
+    product => product.category === category
   );
 
 }
 
 
-// ------------------------------------------------------
-// 8. REGION CHANGE
-// ------------------------------------------------------
+function getProductsByLocation(country, region, city) {
 
-if (regionSelect) {
+  return giftivaProducts.filter(product => {
 
-  regionSelect.addEventListener(
-    "change",
-    async function () {
+    const countryMatch =
+      !country ||
+      product.country.toLowerCase() === country.toLowerCase();
 
-      const country =
-        countrySelect.value.trim();
+    const regionMatch =
+      !region ||
+      product.region.toLowerCase() === region.toLowerCase();
 
-      const region =
-        this.value.trim();
+    const cityMatch =
+      !city ||
+      product.city.toLowerCase() === city.toLowerCase();
 
-      if (!country || !region) {
-
-        citySelect.innerHTML =
-          '<option value="">Select city</option>';
-
-        citySelect.disabled = true;
-
-        return;
-      }
-
-      await loadCities(
-        country,
-        region
-      );
-
-    }
-  );
-
-}
-
-
-// ------------------------------------------------------
-// 9. PRICE FORMATTER
-// ------------------------------------------------------
-
-function formatPrice(price, currency) {
-
-  const symbols = {
-    NGN: "₦",
-    GBP: "£",
-    USD: "$",
-    CAD: "C$",
-    AUD: "A$",
-    EUR: "€",
-    AED: "د.إ",
-    SAR: "﷼",
-    QAR: "﷼",
-    ZAR: "R",
-    GHS: "GH₵",
-    KES: "KSh",
-    BRL: "R$",
-    MXN: "MX$",
-    JPY: "¥",
-    CNY: "¥",
-    INR: "₹",
-    SGD: "S$",
-    MYR: "RM",
-    NZD: "NZ$"
-  };
-
-  const symbol =
-    symbols[currency] || currency || "";
-
-  return `${symbol}${Number(price).toLocaleString()}`;
-
-}
-
-
-// ------------------------------------------------------
-// 10. PRODUCT IMAGE
-// ------------------------------------------------------
-
-function getProductImage(product) {
-
-  if (product.image) {
-
-    return `
-      <img
-        src="${product.image}"
-        alt="${escapeHtml(product.name)}"
-        loading="lazy"
-      >
-    `;
-
-  }
-
-  return `
-    <div class="product-placeholder">
-      ${product.emoji || "🎁"}
-    </div>
-  `;
-
-}
-
-
-// ------------------------------------------------------
-// 11. ESCAPE HTML
-// ------------------------------------------------------
-
-function escapeHtml(value) {
-
-  return String(value || "")
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;");
-
-}
-
-
-// ------------------------------------------------------
-// 12. PRODUCT CARD
-// ------------------------------------------------------
-
-function createProductCard(product) {
-
-  const customization =
-    product.customizable
-      ? `<span class="product-tag">CUSTOMIZABLE</span>`
-      : "";
-
-  return `
-    <article class="product-card">
-
-      <div class="product-image">
-        ${getProductImage(product)}
-      </div>
-
-      <div class="product-info">
-
-        <div class="product-tags">
-          <span class="product-tag">
-            ${escapeHtml(product.category)}
-          </span>
-
-          ${customization}
-        </div>
-
-        <h3>
-          ${escapeHtml(product.name)}
-        </h3>
-
-        <p>
-          ${escapeHtml(product.description)}
-        </p>
-
-        <div class="product-location">
-          📍 ${escapeHtml(product.city)},
-          ${escapeHtml(product.country)}
-        </div>
-
-        <div class="product-bottom">
-
-          <strong class="product-price">
-            ${formatPrice(
-              product.price,
-              product.currency
-            )}
-          </strong>
-
-          <button
-            class="btn btn-gold product-view-btn"
-            data-product-id="${escapeHtml(product.id)}"
-          >
-            View Gift
-          </button>
-
-        </div>
-
-      </div>
-
-    </article>
-  `;
-
-}
-
-
-// ------------------------------------------------------
-// 13. DISPLAY PRODUCTS
-// ------------------------------------------------------
-
-function displayProducts(products, title = "") {
-
-  if (!marketplaceResults) return;
-
-  if (!products || products.length === 0) {
-
-    marketplaceResults.innerHTML = `
-
-      <div class="empty-state">
-
-        <div>🎁</div>
-
-        <h3>No products found</h3>
-
-        <p>
-          We don't have a listing for this location yet.
-          Try another city or category.
-        </p>
-
-      </div>
-
-    `;
-
-    return;
-  }
-
-
-  marketplaceResults.innerHTML = `
-
-    ${title ? `
-      <div class="marketplace-result-heading">
-        <h3>${escapeHtml(title)}</h3>
-        <p>${products.length} product${products.length === 1 ? "" : "s"} available</p>
-      </div>
-    ` : ""}
-
-    ${products
-      .map(product => createProductCard(product))
-      .join("")}
-
-  `;
-
-
-  // Add product button events
-
-  document
-    .querySelectorAll(".product-view-btn")
-    .forEach(button => {
-
-      button.addEventListener(
-        "click",
-        function () {
-
-          const productId =
-            this.dataset.productId;
-
-          openProductDetails(productId);
-
-        }
-      );
-
-    });
-
-}
-
-
-// ------------------------------------------------------
-// 14. SHOW ALL PRODUCTS ON PAGE LOAD
-// ------------------------------------------------------
-
-function showAllProducts() {
-
-  if (
-    typeof getGiftivaProducts !== "function"
-  ) {
-
-    console.error(
-      "products.js was not loaded before script.js"
-    );
-
-    return;
-
-  }
-
-  const products =
-    getGiftivaProducts();
-
-  displayProducts(
-    products,
-    "Featured GIFTIVA Gifts"
-  );
-
-}
-
-
-// ------------------------------------------------------
-// 15. SEARCH MARKETPLACE
-// ------------------------------------------------------
-
-function searchMarketplace() {
-
-  if (
-    typeof getGiftivaProducts !== "function"
-  ) return;
-
-
-  const country =
-    countrySelect?.value.trim() || "";
-
-  const region =
-    regionSelect?.value.trim() || "";
-
-  const city =
-    citySelect?.value.trim() || "";
-
-  const category =
-    categorySelect?.value.trim() || "";
-
-
-  let products =
-    getGiftivaProducts();
-
-
-  // Country
-
-  if (country) {
-
-    products =
-      products.filter(product =>
-        normalize(product.country) ===
-        normalize(country)
-      );
-
-  }
-
-
-  // Region
-
-  if (region) {
-
-    products =
-      products.filter(product =>
-        normalize(product.region) ===
-        normalize(region)
-      );
-
-  }
-
-
-  // City
-
-  if (city) {
-
-    products =
-      products.filter(product =>
-        normalize(product.city) ===
-        normalize(city)
-      );
-
-  }
-
-
-  // Category
-
-  if (
-    category &&
-    category !== "All categories"
-  ) {
-
-    const categoryMap = {
-
-      "Gifts & Flowers":
-        ["Gifts & Flowers"],
-
-      "Food & Cakes":
-        ["Food & Cakes"],
-
-      "Jewelry & Luxury":
-        ["Jewelry & Luxury"],
-
-      "Experiences":
-        ["Experiences"],
-
-      "Services":
-        ["Services"],
-
-      "Cars":
-        ["Cars"],
-
-      "Car Rentals":
-        ["Car Rentals"],
-
-      "Chauffeur":
-        ["Chauffeur"]
-
-    };
-
-
-    const allowed =
-      categoryMap[category];
-
-
-    if (allowed) {
-
-      products =
-        products.filter(product =>
-          allowed.includes(product.category)
-        );
-
-    }
-
-  }
-
-
-  let heading =
-    "GIFTIVA Marketplace";
-
-
-  if (city && region && country) {
-
-    heading =
-      `Gifts available in ${city}`;
-
-  } else if (region && country) {
-
-    heading =
-      `Gifts available in ${region}`;
-
-  } else if (country) {
-
-    heading =
-      `Gifts available in ${country}`;
-
-  }
-
-
-  displayProducts(
-    products,
-    heading
-  );
-
-
-  const marketplace =
-    document.getElementById(
-      "marketplace"
-    );
-
-
-  if (marketplace) {
-
-    marketplace.scrollIntoView({
-      behavior: "smooth"
-    });
-
-  }
-
-}
-
-
-// ------------------------------------------------------
-// 16. SEARCH BUTTON
-// ------------------------------------------------------
-
-if (searchBtn) {
-
-  searchBtn.addEventListener(
-    "click",
-    searchMarketplace
-  );
-
-}
-
-
-// ------------------------------------------------------
-// 17. NORMALIZE LOCATION
-// ------------------------------------------------------
-
-function normalize(value) {
-
-  return String(value || "")
-    .toLowerCase()
-    .trim()
-    .replace(/\s+/g, " ")
-    .replace(/\bstate\b/g, "")
-    .replace(/\bstate of\b/g, "")
-    .trim();
-
-}
-
-
-// ------------------------------------------------------
-// 18. PRODUCT DETAILS
-// ------------------------------------------------------
-
-function openProductDetails(productId) {
-
-  if (
-    typeof getProductById !== "function"
-  ) return;
-
-
-  const product =
-    getProductById(productId);
-
-
-  if (!product) {
-
-    alert(
-      "Sorry, this product could not be found."
-    );
-
-    return;
-
-  }
-
-
-  const customizationText =
-    product.customizable
-      ? "✨ This product can be customized."
-      : "This product is not currently customizable.";
-
-
-  alert(
-
-    `${product.name}\n\n` +
-
-    `${product.description}\n\n` +
-
-    `Price: ${formatPrice(
-      product.price,
-      product.currency
-    )}\n` +
-
-    `Location: ${product.city}, ${product.country}\n\n` +
-
-    `${customizationText}\n\n` +
-
-    `GIFTIVA product ID: ${product.id}`
-
-  );
-
-}
-
-
-// ------------------------------------------------------
-// 19. LOGIN
-// ------------------------------------------------------
-
-const loginBtn =
-  document.getElementById("loginBtn");
-
-const loginModal =
-  document.getElementById("loginModal");
-
-
-if (loginBtn && loginModal) {
-
-  loginBtn.addEventListener(
-    "click",
-    () => {
-
-      loginModal.classList.add("active");
-
-    }
-  );
-
-}
-
-
-// ------------------------------------------------------
-// 20. SIGN UP
-// ------------------------------------------------------
-
-const signupBtn =
-  document.getElementById("signupBtn");
-
-const signupModal =
-  document.getElementById("signupModal");
-
-
-if (signupBtn && signupModal) {
-
-  signupBtn.addEventListener(
-    "click",
-    () => {
-
-      signupModal.classList.add("active");
-
-    }
-  );
-
-}
-
-
-// ------------------------------------------------------
-// 21. VENDOR
-// ------------------------------------------------------
-
-const vendorBtn =
-  document.getElementById("vendorBtn");
-
-const vendorModal =
-  document.getElementById("vendorModal");
-
-
-if (vendorBtn && vendorModal) {
-
-  vendorBtn.addEventListener(
-    "click",
-    () => {
-
-      vendorModal.classList.add("active");
-
-    }
-  );
-
-}
-
-
-// ------------------------------------------------------
-// 22. CLOSE MODALS
-// ------------------------------------------------------
-
-document
-  .querySelectorAll(".modal-close")
-  .forEach(button => {
-
-    button.addEventListener(
-      "click",
-      () => {
-
-        const modalId =
-          button.dataset.close;
-
-        const modal =
-          document.getElementById(modalId);
-
-        if (modal) {
-
-          modal.classList.remove(
-            "active"
-          );
-
-        }
-
-      }
-    );
+    return countryMatch && regionMatch && cityMatch;
 
   });
 
-
-// Close when clicking outside
-
-document
-  .querySelectorAll(".modal")
-  .forEach(modal => {
-
-    modal.addEventListener(
-      "click",
-      function(event) {
-
-        if (
-          event.target === this
-        ) {
-
-          this.classList.remove(
-            "active"
-          );
-
-        }
-
-      }
-    );
-
-  });
-
-
-// ------------------------------------------------------
-// 23. LOGIN FORM
-// ------------------------------------------------------
-
-const loginForm =
-  document.getElementById("loginForm");
-
-
-if (loginForm) {
-
-  loginForm.addEventListener(
-    "submit",
-    function(event) {
-
-      event.preventDefault();
-
-      alert(
-        "GIFTIVA login will be connected to the secure customer account system."
-      );
-
-    }
-  );
-
 }
-
-
-// ------------------------------------------------------
-// 24. SIGNUP FORM
-// ------------------------------------------------------
-
-const signupForm =
-  document.getElementById("signupForm");
-
-
-if (signupForm) {
-
-  signupForm.addEventListener(
-    "submit",
-    function(event) {
-
-      event.preventDefault();
-
-      alert(
-        "Your GIFTIVA account system will be connected here."
-      );
-
-    }
-  );
-
-}
-
-
-// ------------------------------------------------------
-// 25. VENDOR FORM
-// ------------------------------------------------------
-
-const vendorForm =
-  document.getElementById("vendorForm");
-
-
-if (vendorForm) {
-
-  vendorForm.addEventListener(
-    "submit",
-    function(event) {
-
-      event.preventDefault();
-
-      alert(
-        "Your GIFTIVA vendor application has been received. Vendor verification will be connected to the admin system."
-      );
-
-    }
-  );
-
-}
-
-
-// ------------------------------------------------------
-// 26. ORDER TRACKING
-// ------------------------------------------------------
-
-const trackBtn =
-  document.getElementById("trackBtn");
-
-const trackingNumber =
-  document.getElementById(
-    "trackingNumber"
-  );
-
-const trackingResult =
-  document.getElementById(
-    "trackingResult"
-  );
-
-
-if (trackBtn) {
-
-  trackBtn.addEventListener(
-    "click",
-    function() {
-
-      const number =
-        trackingNumber?.value.trim();
-
-
-      if (!number) {
-
-        if (trackingResult) {
-
-          trackingResult.innerHTML = `
-            <div class="empty-state">
-              <p>Please enter your order number.</p>
-            </div>
-          `;
-
-        }
-
-        return;
-
-      }
-
-
-      if (trackingResult) {
-
-        trackingResult.innerHTML = `
-
-          <div class="tracking-card">
-
-            <h3>Order ${escapeHtml(number)}</h3>
-
-            <div class="tracking-status">
-
-              <div class="tracking-step active">
-                <span>✓</span>
-                <strong>Order Confirmed</strong>
-              </div>
-
-              <div class="tracking-step">
-                <span>2</span>
-                <strong>Vendor Preparing Gift</strong>
-              </div>
-
-              <div class="tracking-step">
-                <span>3</span>
-                <strong>Out for Delivery</strong>
-              </div>
-
-              <div class="tracking-step">
-                <span>4</span>
-                <strong>Delivered</strong>
-              </div>
-
-            </div>
-
-          </div>
-
-        `;
-
-      }
-
-    }
-  );
-
-}
-
-
-// ------------------------------------------------------
-// 27. INITIALIZE
-// ------------------------------------------------------
-
-document.addEventListener(
-  "DOMContentLoaded",
-  function() {
-
-    populateCountries();
-
-    showAllProducts();
-
-  }
-);
